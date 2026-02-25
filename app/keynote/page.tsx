@@ -24,8 +24,7 @@ export default function KeynotePage() {
       {/* HERO SECTION */}
       <KeynoteHeroSection />
 
-      {/* Truth Section */}
-      <KeynoteTruthSection />
+      
 
       {/* News / Logos Section */}
       <section className="bg-black py-10">
@@ -66,6 +65,9 @@ export default function KeynotePage() {
         </div>
       </section>
 
+      {/* Truth Section */}
+      <KeynoteTruthSection />
+      
       {/* What People Are Saying Section */}
       <KeynoteTestimonialsSection />
 

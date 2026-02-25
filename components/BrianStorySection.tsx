@@ -60,10 +60,10 @@ export default function BrianStorySection() {
                   From just{" "}
                   <span className="text-[#168EE4] font-extrabold">$18K a year</span>
                   <br className="hidden sm:block" />
-                  <span className="text-white/90">deep in debt & at Rock Bottom</span>
+                  <span className="text-white/90">deep in debt</span>
                   <br />
                   to{" "}
-                  <span className="text-[#168EE4] font-extrabold text-4xl md:text-5xl lg:text-6xl">#2 in the World!</span>
+                  <span className="text-[#168EE4] font-extrabold">#2 in the World!</span>
                 </h2>
 
                 <p className="mt-4 text-white/85 text-xl md:text-2xl lg:text-3xl font-semibold max-w-[1000px]">
@@ -86,10 +86,10 @@ export default function BrianStorySection() {
 
                 {/* Quote */}
                 <div className="mt-4">
-                  <p className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-snug">
+                  <p className="text-lg md:text-xl lg:text-2xl font-semibold leading-snug">
                     Prospecting Sucks!
                   </p>
-                  <p className="mt-4 text-3xl md:text-4xl lg:text-5xl font-semibold leading-snug">
+                  <p className="mt-4 text-lg md:text-xl lg:text-2xl font-semibold leading-snug">
                     Don&apos;t hunt & chase business,
                     <br />
                     become the one your market can&apos;t ignore.

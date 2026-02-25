@@ -31,7 +31,7 @@ export default function Home() {
 
             {/* Content Overlay */}
             <div className="relative z-10 h-full mx-auto w-full px-6 lg:px-12">
-              <div className="grid min-h-[70vh] sm:min-h-[80vh] md:min-h-[92vh] items-center gap-6 md:gap-10 lg:grid-cols-2 pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-10 md:pb-14">
+              <div className="grid min-h-[70vh] sm:min-h-[80vh] md:min-h-[92vh] items-center gap-6 md:gap-10 lg:grid-cols-[2fr_1fr] pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-10 md:pb-14">
                 {/* Left Content */}
                 <div className="pl-6 sm:pl-8 md:pl-16 lg:pl-24">
                   <h1 className="text-white font-bold leading-[1.05] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
@@ -134,7 +134,7 @@ export default function Home() {
             ].map((t, i) => (
               <div key={i} className="flex gap-3">
                 <span className="mt-2 h-2.5 w-2.5 flex-none bg-[#AADBFF]" />
-                <p className="text-white/85 text-base md:text-lg lg:text-xl leading-snug">{t}</p>
+                <p className="text-white/85 text-sm md:text-base lg:text-lg leading-snug">{t}</p>
               </div>
             ))}
           </div>

@@ -6,13 +6,14 @@ export default function AttractDontChaseSection() {
       <div className="w-full mx-auto max-w-[92%] px-[3px] lg:px-[2px]">
         {/* Why "Attract, Don't Chase" Wins Section */}
         <div className="text-center mb-16">
-          <h2 className="text-black font-medium text-4xl md:text-5xl lg:text-6xl mb-4">
-            Why The Opposite of What You&apos;ve Been Taught Works 1,000x Better!
+          <h2 className="text-black font-bold text-xl md:text-2xl lg:text-3xl mb-4 max-w-3xl mx-auto leading-snug tracking-tight">
+            Why The Opposite of What You&apos;ve Been Taught<br />
+            <span className="block mt-1">Works 1,000x Better!</span>
           </h2>
-          <p className="text-black font-medium text-xl md:text-2xl lg:text-3xl mb-6 max-w-4xl mx-auto leading-relaxed">
-            Invert the Pyramid... or You&apos;ll Spend The Rest of Your Life Chasing What Should Be Chasing You.
+          <p className="text-black font-normal text-base md:text-lg lg:text-xl mb-6 max-w-3xl mx-auto leading-relaxed">
+            Invert the Pyramid... or You&apos;ll Spend The Rest of Your Life <span className="whitespace-nowrap">Chasing What Should Be Chasing You.</span>
           </p>
-          <p className="text-black text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto mb-4 leading-relaxed">
+          <p className="text-black font-normal text-sm md:text-base lg:text-lg max-w-3xl mx-auto mb-4 leading-relaxed">
             You&apos;ve been told the path to success is cold calls, door knocking, and relentless hustle. But what if the real power move is doing less of what burns you out, and more of what brings results?
           </p>
           <p className="text-black text-lg md:text-xl lg:text-2xl font-medium">

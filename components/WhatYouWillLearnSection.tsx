@@ -50,7 +50,7 @@ export default function WhatYouWillLearnSection() {
             </div>
 
             {/* Main Title */}
-            <h2 className="text-black font-medium text-3xl md:text-4xl lg:text-5xl leading-tight mb-6">
+            <h2 className="text-black font-medium text-xl md:text-2xl lg:text-3xl leading-tight mb-6">
               Acquire the Mindset and Skills for Success in Real Estate and Life
             </h2>
 

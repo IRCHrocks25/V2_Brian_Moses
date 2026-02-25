@@ -46,7 +46,7 @@ export default function KeynoteHeroSection() {
                 <div className="mt-7 sm:mt-9 space-y-5 sm:space-y-6">
                   {/* Headline */}
                   <p className="text-white/90 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.08] font-normal">
-                    &ldquo;You can have, do, be, accomplish, and <span className="italic font-serif">achieve anything</span> you&nbsp;want in&nbsp;life.&rdquo;
+                    &ldquo;You can have, do, be, accomplish, and <span className="italic font-semibold">achieve anything</span> you&nbsp;want in&nbsp;life.&rdquo;
                   </p>
 
 
