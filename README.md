@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with the following specifications:
 
-- **Framework**: Next.js 14.2.5 (React-based)
+- **Framework**: Next.js 14.2.35 (React-based)
 - **Language**: TypeScript
 - **Router**: App Router (Next.js 13+)
 - **Styling**: Tailwind CSS
