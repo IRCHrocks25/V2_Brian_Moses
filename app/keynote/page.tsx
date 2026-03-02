@@ -22,7 +22,9 @@ export default function KeynotePage() {
       <Navbar logoPath="/images/speakerpage_logo/main logo-speaker-white.png" />
 
       {/* HERO SECTION */}
-      <KeynoteHeroSection />
+      <div id="home">
+        <KeynoteHeroSection />
+      </div>
 
       
 
@@ -62,10 +64,14 @@ export default function KeynotePage() {
        <KeynoteCredentialsSection />
 
       {/* Sharing A Story of Radical Transformation Section */}
-      <KeynoteTransformationSection />
+      <div id="about">
+        <KeynoteTransformationSection />
+      </div>
 
       {/* Signature Keynotes & Workshops Section */}
-      <KeynoteKeynotesWorkshopsSection />
+      <div id="services">
+        <KeynoteKeynotesWorkshopsSection />
+      </div>
 
       {/* Why Event Planners Choose Brian Moses Section */}
       <KeynoteEventPlannersSection />
