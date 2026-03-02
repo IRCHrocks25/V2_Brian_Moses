@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark scroll-smooth">
       <body className="font-inter">
         <FontLoader />
         <div className="flex min-h-screen flex-col bg-[#0a0a0a]">

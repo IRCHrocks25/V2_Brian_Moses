@@ -32,7 +32,7 @@ export default function KeynoteHeroSection() {
               <div className="hidden lg:block" />
               
               {/* Right column - content */}
-              <div className="w-full text-left -translate-y-16 sm:-translate-y-20 md:-translate-y-24 lg:-translate-y-28">
+              <div className="w-full text-left -translate-y-24 sm:-translate-y-28 md:-translate-y-36 lg:-translate-y-44">
                 {/* Eyebrow */}
                 <div className="flex items-center gap-3 text-xs tracking-[0.28em] uppercase text-white/70">
                 <span className="tracking-[0.18em] text-white/60">Brian Moses</span>

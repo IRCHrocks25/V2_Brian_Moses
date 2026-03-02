@@ -159,7 +159,7 @@ export default function KeynoteCredentialsSection() {
         <div className="mt-16 md:mt-20 w-screen relative left-1/2 right-1/2 -translate-x-1/2 overflow-hidden">
           <div
             className="marquee flex items-center gap-14 will-change-transform"
-            style={{ animationDuration: "70s" }}
+            style={{ animationDuration: "120s" }}
           >
             {[...Array(3)].flatMap((_, loop) =>
               coloredLogos.map((src, index) => (

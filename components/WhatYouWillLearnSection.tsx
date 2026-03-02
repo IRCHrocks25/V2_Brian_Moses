@@ -60,9 +60,16 @@ export default function WhatYouWillLearnSection() {
             </p>
 
             {/* CTA Button */}
-            <button className="rounded-full bg-black text-white px-8 py-4 text-base md:text-lg font-medium hover:bg-black/90 transition-colors">
-              Book a Free Discovery Call
-            </button>
+            <a
+              href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <button className="rounded-full bg-black text-white px-8 py-4 text-base md:text-lg font-medium hover:bg-black/90 transition-colors">
+                Book a Free Discovery Call
+              </button>
+            </a>
           </div>
 
           {/* Right Column */}

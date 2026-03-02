@@ -48,9 +48,16 @@ export default function QuoteSection() {
             </p>
 
             {/* CTA Button */}
-            <button className="rounded-full bg-white text-black px-8 py-4 text-base md:text-lg font-medium hover:bg-white/90 transition-colors">
-              Book a Free Discovery Call
-            </button>
+            <a
+              href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <button className="rounded-full bg-white text-black px-8 py-4 text-base md:text-lg font-medium hover:bg-white/90 transition-colors">
+                Book a Free Discovery Call
+              </button>
+            </a>
           </div>
         </div>
       </div>

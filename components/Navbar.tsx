@@ -1,11 +1,30 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useRef, useEffect } from "react";
 
 interface NavbarProps {
   logoPath?: string;
 }
 
 export default function Navbar({ logoPath = "/images/main logo-coaching-white.png" }: NavbarProps) {
+  const [isCoachingOpen, setIsCoachingOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsCoachingOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 w-full bg-[#0a0a0a] border-b border-white/10">
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
@@ -24,18 +43,79 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
 
           {/* Links */}
           <nav className="hidden md:flex items-center gap-4 text-sm md:text-base text-white/80">
-            <Link href="/" className="hover:text-white transition-colors">
+            <Link href="/#home" className="hover:text-white transition-colors scroll-smooth">
               Home
             </Link>
-            <a href="/#services" className="hover:text-white transition-colors">
+            <Link href="/#services" className="hover:text-white transition-colors scroll-smooth">
               Services
-            </a>
-            <a href="/#about" className="hover:text-white transition-colors">
+            </Link>
+            <Link href="/#about" className="hover:text-white transition-colors scroll-smooth">
               About
-            </a>
-            <a href="/#coaching" className="hover:text-white transition-colors">
-              Coaching
-            </a>
+            </Link>
+            {/* Coaching Dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setIsCoachingOpen(!isCoachingOpen)}
+                className="hover:text-white transition-colors flex items-center gap-1"
+              >
+                Coaching
+                <svg
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    isCoachingOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              {isCoachingOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-[#0a0a0a] border border-white/10 rounded-lg shadow-lg overflow-hidden">
+                  <a
+                    href="https://brianmoses.com/how-to-get-3-new-listings-fast-new"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+                    onClick={() => setIsCoachingOpen(false)}
+                  >
+                    Inner Circle
+                  </a>
+                  <a
+                    href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+                    onClick={() => setIsCoachingOpen(false)}
+                  >
+                    1 on 1
+                  </a>
+                  <a
+                    href="https://brianmoses.com/never-say-cant"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+                    onClick={() => setIsCoachingOpen(false)}
+                  >
+                    Never Say Can&apos;t
+                  </a>
+                  <a
+                    href="https://www.brianmoses.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+                    onClick={() => setIsCoachingOpen(false)}
+                  >
+                    Brian Moses AI
+                  </a>
+                </div>
+              )}
+            </div>
             <Link href="/keynote" className="hover:text-white transition-colors">
               Speaker
             </Link>

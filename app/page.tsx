@@ -66,7 +66,7 @@ export default function Home() {
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="relative bg-[#0a0a0a] py-8 md:py-12">
+      <section id="home" className="relative bg-[#0a0a0a] py-8 md:py-12">
         <div className="mx-auto w-full px-6 lg:px-12">
           {/* Background Image Section with Rounded Corners */}
           <div className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[92vh] rounded-lg md:rounded-3xl overflow-hidden">
@@ -109,9 +109,16 @@ export default function Home() {
                   </div>
 
                   <div className="mt-8 sm:mt-10">
-                    <button className="rounded-full bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg lg:text-xl font-medium hover:bg-red-700 transition-colors">
-                      See the System
-                    </button>
+                    <a
+                      href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block"
+                    >
+                      <button className="rounded-full bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg lg:text-xl font-medium hover:bg-red-700 transition-colors">
+                        See the System
+                      </button>
+                    </a>
                   </div>
                 </div>
 
@@ -124,7 +131,9 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <TestimonialsSection />
+      <div id="testimonials">
+        <TestimonialsSection />
+      </div>
 
       {/* ACHIEVEMENTS & SOCIAL PROOF */}
       <section className="relative py-16 md:py-20">
@@ -227,7 +236,9 @@ export default function Home() {
      
 
       {/* Work with Brian Section */}
-      <WorkWithBrianSection />
+      <div id="services">
+        <WorkWithBrianSection />
+      </div>
 
       {/* Attract Don't Chase Section */}
       <AttractDontChaseSection />
@@ -236,7 +247,9 @@ export default function Home() {
       <TypicalOutcomesSection />
 
       {/* Brian Story Section */}
-      <BrianStorySection />
+      <div id="about">
+        <BrianStorySection />
+      </div>
 
       {/* Quote Section */}
       <QuoteSection />

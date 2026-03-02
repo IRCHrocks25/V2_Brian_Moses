@@ -58,6 +58,9 @@ export default function KeynotePage() {
       {/* What People Are Saying Section */}
       <KeynoteTestimonialsSection />
 
+       {/* Credentials & Recognition Section */}
+       <KeynoteCredentialsSection />
+
       {/* Sharing A Story of Radical Transformation Section */}
       <KeynoteTransformationSection />
 
@@ -74,8 +77,7 @@ export default function KeynotePage() {
       {/* What Your Audience Will Experience Section */}
       <KeynoteAudienceExperienceSection />
 
-      {/* Credentials & Recognition Section */}
-      <KeynoteCredentialsSection />
+     
 
       {/* Book Brian Moses Section */}
       <KeynoteBookSection />

@@ -131,9 +131,16 @@ export default function WorkWithBrianSection() {
                       </button>
                     </a>
                   ) : (
-                    <button className="inline-flex items-center justify-center rounded-full border border-white/35 px-5 py-2.5 text-sm text-white/90 hover:text-white hover:border-white/60 transition">
-                      {p.buttonText || "Learn More"}
-                    </button>
+                    <a
+                      href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex"
+                    >
+                      <button className="inline-flex items-center justify-center rounded-full border border-white/35 px-5 py-2.5 text-sm text-white/90 hover:text-white hover:border-white/60 transition">
+                        {p.buttonText || "Learn More"}
+                      </button>
+                    </a>
                   )}
                 </div>
               </div>

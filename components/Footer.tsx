@@ -90,32 +90,32 @@ export default function Footer({ logoPath = "/images/brian_moses_footer_logo.png
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#home"
-                    className="text-gray-600 hover:text-black transition-colors text-sm md:text-base"
+                    href="/#home"
+                    className="text-gray-600 hover:text-black transition-colors text-sm md:text-base scroll-smooth"
                   >
                     Home
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#services"
-                    className="text-gray-600 hover:text-black transition-colors text-sm md:text-base"
+                    href="/#services"
+                    className="text-gray-600 hover:text-black transition-colors text-sm md:text-base scroll-smooth"
                   >
                     Services
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#about"
-                    className="text-gray-600 hover:text-black transition-colors text-sm md:text-base"
+                    href="/#about"
+                    className="text-gray-600 hover:text-black transition-colors text-sm md:text-base scroll-smooth"
                   >
                     About
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#testimonials"
-                    className="text-gray-600 hover:text-black transition-colors text-sm md:text-base"
+                    href="/#testimonials"
+                    className="text-gray-600 hover:text-black transition-colors text-sm md:text-base scroll-smooth"
                   >
                     Testimonials
                   </a>
