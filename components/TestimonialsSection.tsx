@@ -60,6 +60,27 @@ const testimonials = [
     title: "President RATE Mortgage",
     image: "/images/testimonials/Shant_Banosian.png",
   },
+  {
+    header: "Brian is an absolute hero of mine!",
+    body: "He was instrumental in helping me go from 40 deals a year to over 400! He is super smart, world class coach & trainer and I am a HUGE fan!",
+    author: "Brent Gove",
+    title: "Sacramento, CA",
+    image: "/new_testimonials_v2/Brent_Gove.jpg",
+  },
+  {
+    header: "I brought Brian in to close out my annual 3 day RATE Mastermind,",
+    body: "event packed with industry heavyweights because I needed someone exceptional. Over the last 20 years I've watched him consistently produce results for top agents across the country. If you're looking for impact and results, Brian won't disappoint.",
+    author: "Matt Wagner",
+    title: "CEO, Radio & Television Experts / RATE",
+    image: "/new_testimonials_v2/Matt_Wagner.jpg",
+  },
+  {
+    header: "Brian, I wanted to share, our team closed $700K in GCI last month!",
+    body: "Thanks for all your help!",
+    author: "Nick McLean",
+    title: "Nick McLean Real Estate Group",
+    image: "/new_testimonials_v2/Nick_McLean.jpg",
+  },
 ];
 
 function TestimonialsMarquee() {

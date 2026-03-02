@@ -10,6 +10,55 @@ import WhatYouWillLearnSection from "@/components/WhatYouWillLearnSection";
 import WorkLessEarnMoreSection from "@/components/WorkLessEarnMoreSection";
 import Footer from "@/components/Footer";
 
+const homepageColoredLogos = [
+  "/colored_logos/eik4ugvtttwy7drs8xrd 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.26 1 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.26 2 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.26 3 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.30 1 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.30 2 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.30 4 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.34 1 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.34 2 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.34 3 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.37 1 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.37 2 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.40 1 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.40 2 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.40 3 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.43 1 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.43 2 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.46 1 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.49 1 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.51 1 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.51 2 1.png",
+  "/colored_logos/Ekran Resmi 2026-02-24 13.22.51 3 1.png",
+  "/colored_logos/Frame 1000007701.png",
+  "/colored_logos/Frame 1000007702.png",
+  "/colored_logos/Frame 1000007703.png",
+  "/colored_logos/Frame 1000007704.png",
+  "/colored_logos/Frame 1000007705.png",
+  "/colored_logos/Frame 1000007706.png",
+  "/colored_logos/Frame 1000007707.png",
+  "/colored_logos/Frame 1000007708.png",
+  "/colored_logos/Frame 1000007709.png",
+  "/colored_logos/Frame 1000007710.png",
+  "/colored_logos/Frame 1000007711.png",
+  "/colored_logos/Frame 1000007712.png",
+  "/colored_logos/Frame 1000007713.png",
+  "/colored_logos/Frame 1000007714.png",
+  "/colored_logos/Frame 1707482092.png",
+  "/colored_logos/Guaranteed_Rate_Logo 1.png",
+  "/colored_logos/Hyatt-Hotels-Emblem 1.png",
+  "/colored_logos/layer1 1.png",
+  "/colored_logos/mercedes-logo-mercedes-benz-logo-png-meaning-information-11 1.png",
+  "/colored_logos/National_Football_League_logo.svg 1.png",
+  "/colored_logos/Rotary-Logo-azure-6786 1.png",
+  "/colored_logos/salesforce-logo 1.png",
+  "/colored_logos/SUCCESS_MAGAZINE-1 1.png",
+  "/colored_logos/Verizon_2015_logo_-vector.svg 1.png",
+];
+
 export default function Home() {
   return (
     <>
@@ -88,39 +137,36 @@ export default function Home() {
             Here&apos;s Why Agents Trust Brian&apos;s System
           </h2>
           <p className="text-center text-white font-light tracking-wide text-lg md:text-xl lg:text-2xl xl:text-3xl max-w-5xl mx-auto leading-relaxed">
-            Brian Has Inspired More Than 20,000 Real Estate Agents & Industry Professionals Across North America Including All Major Brands
+            Brian Has Inspired More Than 50,000 Real Estate Agents & Industry Professionals Across North America Including All Major Brands
           </p>
         </div>
 
         {/* Trusted By Logos - Marquee (Edge to Edge, remaining 6 logos) */}
         <div className="mt-12 md:mt-16 overflow-hidden w-full">
-          <div className="marquee flex items-center gap-14 will-change-transform">
-              {[...Array(4)].flatMap((_, loop) =>
-                [
-                  "/images/logos/Frame 1000003721.png",
-                  "/images/logos/gradient-blue-logo 1.png",
-                  "/images/logos/13103 1.png",
-                  "/images/logos/163035_normal 1.png",
-                  "/images/logos/HomeSmart-Logo_Full_WHT 1.png",
-                  "/images/logos/Real-Logo-Outline-Black 1.png",
-                ].map((src) => {
-                  // Encode the path to handle spaces and special characters
-                  const encodedSrc = src.split('/').map((part, i) => 
-                    i === 0 ? part : encodeURIComponent(part)
-                  ).join('/');
-                  return (
-                    <Image
-                      key={`${loop}-${src}`}
-                      src={encodedSrc}
-                      alt="Trusted by logo"
-                      width={140}
-                      height={64}
-                      className="h-10 md:h-12 w-auto object-contain opacity-80 flex-shrink-0"
-                      unoptimized
-                    />
-                  );
-                })
-              )}
+          <div
+            className="marquee flex items-center gap-14 will-change-transform"
+            style={{ animationDuration: "70s" }}
+          >
+            {[...Array(3)].flatMap((_, loop) =>
+              homepageColoredLogos.map((src) => {
+                // Encode the path to handle spaces and special characters
+                const encodedSrc = src
+                  .split("/")
+                  .map((part, i) => (i === 0 ? part : encodeURIComponent(part)))
+                  .join("/");
+                return (
+                  <Image
+                    key={`${loop}-${src}`}
+                    src={encodedSrc}
+                    alt="Trusted by logo"
+                    width={140}
+                    height={64}
+                    className="h-10 md:h-12 w-auto object-contain opacity-80 flex-shrink-0"
+                    unoptimized
+                  />
+                );
+              })
+            )}
           </div>
         </div>
 

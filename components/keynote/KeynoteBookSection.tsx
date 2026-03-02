@@ -91,9 +91,15 @@ export default function KeynoteBookSection() {
                     </p>
 
                     {/* CTA Button */}
-                    <button className="w-full rounded-xl px-6 py-4 text-base sm:text-lg font-semibold text-black bg-white hover:bg-white/95 transition shadow-[0_20px_60px_rgba(255,255,255,0.15)]">
-                      Request Availability
-                    </button>
+                    <a
+                      href="https://calendly.com/coachbrianmoses/discuss-booking-brian-for-your-event-clone"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <button className="w-full rounded-xl px-6 py-4 text-base sm:text-lg font-semibold text-black bg-white hover:bg-white/95 transition shadow-[0_20px_60px_rgba(255,255,255,0.15)]">
+                        Request Availability
+                      </button>
+                    </a>
 
                     {/* Response Time */}
                     <p className="mt-4 text-white/50 text-xs text-center">

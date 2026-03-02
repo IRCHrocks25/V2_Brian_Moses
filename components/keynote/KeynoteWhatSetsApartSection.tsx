@@ -26,7 +26,8 @@ export default function KeynoteWhatSetsApartSection() {
             <div className="space-y-6 md:space-y-8">
 
               <p className="text-white text-lg md:text-xl lg:text-2xl leading-relaxed">
-              He challenges audiences to reclaim agency, rewire the patterns driving their results, and stop living and leading on default. The result? People don’t just feel energized, they leave thinking differently about their work, their choices, and their potential.
+                He challenges audiences to dream bigger, confront the habits shaping their outcomes, and build a life lived in abundance instead of lack.
+                The transformation doesn&apos;t stop with them. It multiplies through their families, their teams, their friends and their communities.
               </p>
 
               <p className="text-white/85 text-lg md:text-xl lg:text-2xl leading-relaxed">

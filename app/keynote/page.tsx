@@ -33,34 +33,21 @@ export default function KeynotePage() {
             As Seen In
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-            <Image
-              src="/news_logos/logo2 - 32.png"
-              alt="News logo 1"
-              width={120}
-              height={48}
-              className="h-12 w-auto object-contain opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition"
-            />
-            <Image
-              src="/news_logos/logo2 - 33.png"
-              alt="News logo 2"
-              width={120}
-              height={48}
-              className="h-12 w-auto object-contain opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition"
-            />
-            <Image
-              src="/news_logos/logo2 - 34.png"
-              alt="News logo 3"
-              width={120}
-              height={48}
-              className="h-12 w-auto object-contain opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition"
-            />
-            <Image
-              src="/news_logos/logo2 - 35.png"
-              alt="News logo 4"
-              width={120}
-              height={48}
-              className="h-12 w-auto object-contain opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition"
-            />
+            {[
+              "/news_logo/logo2 - 32.png",
+              "/news_logo/logo2 - 33.png",
+              "/news_logo/logo2 - 34.png",
+              "/news_logo/logo2 - 35.png",
+            ].map((src, index) => (
+              <Image
+                key={src}
+                src={src}
+                alt={`News logo ${index + 1}`}
+                width={120}
+                height={48}
+                className="h-12 w-auto object-contain opacity-90 transition"
+              />
+            ))}
           </div>
         </div>
       </section>

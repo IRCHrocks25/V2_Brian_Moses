@@ -12,7 +12,7 @@ export default function KeynoteTrustSection() {
             Here&apos;s Why Agents Trust Brian&apos;s System
           </h2>
           <p className="text-center text-white font-light tracking-wide text-lg md:text-xl lg:text-2xl xl:text-3xl max-w-5xl mx-auto leading-relaxed">
-            Brian Has Inspired More Than 20,000 Real Estate Agents & Industry Professionals Across North America Including All Major Brands
+            Brian Has Inspired More Than 50,000 Real Estate Agents & Industry Professionals Across North America Including All Major Brands
           </p>
 
           {/* Achievements Grid (Keep first 2, optionally add 3rd) */}

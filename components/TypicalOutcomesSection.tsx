@@ -188,18 +188,33 @@ export default function TypicalOutcomesSection() {
               </div>
               
               {/* Image */}
-              <div className="relative w-full h-[300px] md:h-[350px] lg:h-[400px] rounded-xl overflow-hidden border-2 border-[#2aa7ff]/30 shadow-[0_20px_60px_rgba(42,167,255,0.3)] flex-shrink-0">
-                <Image
-                  src="/images/brian18.png"
-                  alt="Brian Moses"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                  className="object-cover"
-                  style={{ objectPosition: 'center center' }}
-                  priority
-                />
-                {/* Subtle gradient overlay for depth */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+              <div className="flex flex-col gap-4 flex-shrink-0">
+                {/* Top Image - Brian */}
+                <div className="relative w-full h-[300px] md:h-[340px] lg:h-[380px] rounded-xl overflow-hidden border-2 border-[#2aa7ff]/30 shadow-[0_20px_60px_rgba(42,167,255,0.3)]">
+                  <Image
+                    src="/images/brian18.png"
+                    alt="Brian Moses"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                    className="object-cover"
+                    style={{ objectPosition: 'center center' }}
+                    priority
+                  />
+                  {/* Subtle gradient overlay for depth */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                </div>
+
+                {/* Bottom Image - Tony Robbins Court */}
+                <div className="relative w-full h-[260px] md:h-[300px] lg:h-[340px] rounded-xl overflow-hidden border-2 border-[#2aa7ff]/30 shadow-[0_20px_60px_rgba(42,167,255,0.25)]">
+                  <Image
+                    src="/Tony_Robbins_court.png"
+                    alt="Tony Robbins Event with Brian Moses"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -207,7 +222,7 @@ export default function TypicalOutcomesSection() {
           {/* Closing Statement */}
           <div className="text-center bg-[#2aa7ff]/10 rounded-xl p-6 md:p-8 border-2 border-[#2aa7ff]/30">
             <p className="text-white text-lg md:text-xl lg:text-2xl font-semibold">
-              His Strategies have been proven repeatedly through the success of the <span className="text-[#2aa7ff] font-bold">thousands</span> he has impacted over the years.
+              Brian's Strategies have been proven repeatedly through the success of the <span className="text-[#2aa7ff] font-bold">thousands</span> he has impacted over the years.
             </p>
           </div>
         </div>
@@ -254,9 +269,16 @@ export default function TypicalOutcomesSection() {
                 </p>
               </div>
               <div className="mt-auto pt-6">
-                <button className="w-full rounded-full bg-white text-black px-6 py-4 text-base md:text-lg font-semibold hover:bg-gray-100 transition-colors">
-                  Inner Circle Group Coaching
-                </button>
+                <a
+                  href="https://brianmoses.com/how-to-get-3-new-listings-fast-new"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <button className="w-full rounded-full bg-white text-black px-6 py-4 text-base md:text-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Inner Circle Group Coaching
+                  </button>
+                </a>
               </div>
             </div>
             
@@ -268,9 +290,16 @@ export default function TypicalOutcomesSection() {
                 </p>
               </div>
               <div className="mt-auto pt-6">
-                <button className="w-full rounded-full bg-white text-black px-6 py-4 text-base md:text-lg font-semibold hover:bg-gray-100 transition-colors">
-                  Apply Now
-                </button>
+                <a
+                  href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <button className="w-full rounded-full bg-white text-black px-6 py-4 text-base md:text-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Apply Now
+                  </button>
+                </a>
               </div>
             </div>
           </div>
