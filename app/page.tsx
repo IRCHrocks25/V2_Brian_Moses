@@ -97,7 +97,10 @@ export default function Home() {
                     </p>
 
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
-                      Brian Moses opens his entire playbook - built from selling over 3,500&nbsp;homes - and walks you step-by-step through exactly what to&nbsp;do. Follow the&nbsp;system, and the&nbsp;results take&nbsp;care of&nbsp;themselves.
+                      Brian Moses opens his entire playbook - built from selling over 3,500&nbsp;homes - and walks you step-by-step through exactly what to&nbsp;do.
+                    </p>
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
+                      Follow the&nbsp;system, and the&nbsp;results take&nbsp;care of&nbsp;themselves.
                     </p>
 
                     <p
@@ -154,7 +157,7 @@ export default function Home() {
         <div className="mt-12 md:mt-16 overflow-hidden w-full">
           <div
             className="marquee flex items-center gap-14 will-change-transform"
-            style={{ animationDuration: "70s" }}
+            style={{ animationDuration: "180s" }}
           >
             {[...Array(3)].flatMap((_, loop) =>
               homepageColoredLogos.map((src) => {

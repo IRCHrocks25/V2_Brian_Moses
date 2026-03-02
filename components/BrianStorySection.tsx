@@ -86,9 +86,7 @@ export default function BrianStorySection() {
 
                 {/* Quote */}
                 <div className="mt-4">
-                  <p className="text-lg md:text-xl lg:text-2xl font-semibold leading-snug">
-                    Prospecting Sucks!
-                  </p>
+                  
                   <p className="mt-4 text-lg md:text-xl lg:text-2xl font-semibold leading-snug">
                     Don&apos;t hunt & chase business,
                     <br />
