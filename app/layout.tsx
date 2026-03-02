@@ -3,8 +3,10 @@ import "./globals.css";
 import FontLoader from "@/components/FontLoader";
 
 export const metadata: Metadata = {
-  title: "Brian Moses - Landing Page",
-  description: "Welcome to Brian Moses' landing page",
+  title:
+    "Brian Moses | #2 Worldwide Real Estate Coach & Keynote Speaker | Attract, Don’t Chase",
+  description:
+    "Discover the proven Attract, Don’t Chase system from Brian Moses — a #2 worldwide ranked real estate agent, top real estate coach, and in‑demand keynote speaker. Learn how to generate consistent, high‑quality listings, scale your production without burnout, and create a predictable seven‑figure real estate business.",
 };
 
 export default function RootLayout({
