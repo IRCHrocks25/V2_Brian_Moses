@@ -48,6 +48,7 @@ const homepageColoredLogos = [
   "/colored_logos/Frame 1000007713.png",
   "/colored_logos/Frame 1000007714.png",
   "/colored_logos/Frame 1707482092.png",
+  "/colored_logos/vulcan7-color 1.png",
   "/colored_logos/Guaranteed_Rate_Logo 1.png",
   "/colored_logos/Hyatt-Hotels-Emblem 1.png",
   "/colored_logos/layer1 1.png",

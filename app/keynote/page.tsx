@@ -47,7 +47,7 @@ export default function KeynotePage() {
                 alt={`News logo ${index + 1}`}
                 width={120}
                 height={48}
-                className="h-12 w-auto object-contain opacity-90 transition"
+                className="h-12 w-auto object-contain opacity-90 transition filter grayscale"
               />
             ))}
           </div>
