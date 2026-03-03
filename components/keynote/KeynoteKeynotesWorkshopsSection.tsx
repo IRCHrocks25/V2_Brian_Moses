@@ -92,7 +92,7 @@ export default function KeynoteKeynotesWorkshopsSection() {
         {/* Contact Information */}
         <div className="mt-12 md:mt-16 text-center">
           <p className="text-white/85 text-base md:text-lg lg:text-xl">
-            For a complimentary consultation or to customize a presentation&nbsp;contact:{" "}
+            For more information on having Brian speak at your next event or for a customized presentation&nbsp;contact:{" "}
             <a
               href="mailto:Brian@BrianMoses.com"
               className="text-[#AADBFF] hover:text-[#7FC5FF] transition-colors underline"

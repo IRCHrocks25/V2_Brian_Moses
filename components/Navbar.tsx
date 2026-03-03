@@ -10,7 +10,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({ logoPath = "/images/main logo-coaching-white.png" }: NavbarProps) {
-  const [isCoachingOpen, setIsCoachingOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isKeynotePage = pathname === "/keynote";
@@ -18,7 +18,7 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsCoachingOpen(false);
+        setIsResourcesOpen(false);
       }
     }
 
@@ -64,16 +64,16 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
             >
               About
             </Link>
-            {/* Coaching Dropdown */}
+            {/* Resources Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <button
-                onClick={() => setIsCoachingOpen(!isCoachingOpen)}
+                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
                 className="hover:text-white transition-colors flex items-center gap-1"
               >
-                Coaching
+                Resources
                 <svg
                   className={`w-4 h-4 transition-transform duration-200 ${
-                    isCoachingOpen ? "rotate-180" : ""
+                    isResourcesOpen ? "rotate-180" : ""
                   }`}
                   fill="none"
                   stroke="currentColor"
@@ -87,12 +87,12 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
                   />
                 </svg>
               </button>
-              {isCoachingOpen && (
+              {isResourcesOpen && (
                 <div className="absolute top-full left-0 mt-2 w-56 bg-[#0a0a0a] border border-white/10 rounded-lg shadow-lg overflow-hidden">
                   <Link
                     href="/"
                     className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-colors"
-                    onClick={() => setIsCoachingOpen(false)}
+                    onClick={() => setIsResourcesOpen(false)}
                   >
                     Coaching
                   </Link>
@@ -101,7 +101,7 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-colors"
-                    onClick={() => setIsCoachingOpen(false)}
+                    onClick={() => setIsResourcesOpen(false)}
                   >
                     Inner Circle
                   </a>
@@ -110,7 +110,7 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-colors"
-                    onClick={() => setIsCoachingOpen(false)}
+                    onClick={() => setIsResourcesOpen(false)}
                   >
                     1 on 1
                   </a>
@@ -119,7 +119,7 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-colors"
-                    onClick={() => setIsCoachingOpen(false)}
+                    onClick={() => setIsResourcesOpen(false)}
                   >
                     Never Say Can&apos;t
                   </a>
@@ -128,7 +128,7 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-colors"
-                    onClick={() => setIsCoachingOpen(false)}
+                    onClick={() => setIsResourcesOpen(false)}
                   >
                     Brian Moses AI
                   </a>

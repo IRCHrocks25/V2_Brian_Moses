@@ -114,7 +114,7 @@ export default function Home() {
 
                   <div className="mt-8 sm:mt-10">
                     <a
-                      href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
+                      href="https://brianmoses.com/how-to-get-3-new-listings-fast-new"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block"

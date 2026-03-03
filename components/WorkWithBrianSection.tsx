@@ -132,7 +132,7 @@ export default function WorkWithBrianSection() {
                     </a>
                   ) : (
                     <a
-                      href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
+                      href="https://calendly.com/coachbrianmoses/discuss-booking-brian-for-your-event-clone"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex"

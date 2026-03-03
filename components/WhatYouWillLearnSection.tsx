@@ -79,10 +79,11 @@ export default function WhatYouWillLearnSection() {
               return (
                 <div
                   key={index}
-                  className={`p-6 rounded-lg border border-gray-200 transition-all cursor-pointer ${
+                  className={`p-6 rounded-lg border border-gray-200 transition-all ${
                     isExpanded ? "bg-gray-100" : "bg-white hover:bg-gray-50"
                   }`}
-                  onClick={() => setExpandedIndex(isExpanded ? -1 : index)}
+                  onMouseEnter={() => setExpandedIndex(index)}
+                  onMouseLeave={() => setExpandedIndex(-1)}
                 >
                   <div className="flex items-start gap-4">
                     {/* Blue Circle Icon */}

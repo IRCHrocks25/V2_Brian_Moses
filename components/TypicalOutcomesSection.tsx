@@ -121,7 +121,7 @@ export default function TypicalOutcomesSection() {
           {/* Achievement Card 4 */}
           <div className="bg-gradient-to-br from-[#2aa7ff]/20 to-[#1568F7]/20 backdrop-blur-sm rounded-xl p-6 border border-[#2aa7ff]/30">
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[#2aa7ff] mb-2">20k+</div>
+              <div className="text-4xl md:text-5xl font-bold text-[#2aa7ff] mb-2">50k+</div>
               <div className="text-white text-sm md:text-base font-medium">Trained Industry Wide</div>
             </div>
           </div>
@@ -176,17 +176,6 @@ export default function TypicalOutcomesSection() {
           {/* Section 4 - Human Performance */}
           <div className="bg-gradient-to-r from-transparent to-[#2aa7ff]/10 rounded-xl p-6 md:p-8 border border-[#2aa7ff]/20 overflow-hidden">
             <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start">
-              {/* Text Content */}
-              <div className="flex flex-col justify-center">
-                <h4 className="text-[#2aa7ff] font-bold text-lg md:text-xl mb-4 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#2aa7ff] rounded-full"></span>
-                  Mastering Human Performance
-                </h4>
-                <p className="text-white text-base md:text-lg leading-relaxed">
-                  Beyond production and strategy, lasting growth requires mastering human performance. For more than <span className="font-bold text-[#2aa7ff]">30 years</span> Brian has worked in close alignment with <span className="font-semibold">Tony Robbins and Robbins Research International</span>, developing deep expertise in human psychology, behavior change and peak performance. This added skill and experience allows him to identify the real constraints holding agents back - often not market conditions or lead flow but unseen limiting beliefs, comfort zones and unconscious patterns that sabotage growth.
-                </p>
-              </div>
-              
               {/* Image */}
               <div className="flex flex-col gap-4 flex-shrink-0">
                 {/* Top Image - Brian */}
@@ -215,6 +204,17 @@ export default function TypicalOutcomesSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent"></div>
                 </div>
+              </div>
+              
+              {/* Text Content */}
+              <div className="flex flex-col justify-center">
+                <h4 className="text-[#2aa7ff] font-bold text-lg md:text-xl mb-4 flex items-center gap-2">
+                  <span className="w-2 h-2 bg-[#2aa7ff] rounded-full"></span>
+                  Mastering Human Performance
+                </h4>
+                <p className="text-white text-base md:text-lg leading-relaxed">
+                  Beyond production and strategy, lasting growth requires mastering human performance. For more than <span className="font-bold text-[#2aa7ff]">30 years</span> Brian has worked in close alignment with <span className="font-semibold">Tony Robbins and Robbins Research International</span>, developing deep expertise in human psychology, behavior change and peak performance. This added skill and experience allows him to identify the real constraints holding agents back - often not market conditions or lead flow but unseen limiting beliefs, comfort zones and unconscious patterns that sabotage growth.
+                </p>
               </div>
             </div>
           </div>

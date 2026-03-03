@@ -41,7 +41,7 @@ body {
 
 .marquee-testimonials {
   width: max-content;
-  animation: marquee 120s linear infinite;
+  animation: marquee 119s linear infinite;
 }
 
 .marquee-testimonials.paused {
