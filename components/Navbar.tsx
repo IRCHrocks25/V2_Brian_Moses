@@ -11,6 +11,7 @@ interface NavbarProps {
 
 export default function Navbar({ logoPath = "/images/main logo-coaching-white.png" }: NavbarProps) {
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isKeynotePage = pathname === "/keynote";
@@ -44,7 +45,7 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
             />
           </Link>
 
-          {/* Links */}
+          {/* Desktop Links */}
           <nav className="hidden md:flex items-center gap-4 text-sm md:text-base text-white/80">
             <Link 
               href={isKeynotePage ? "/keynote#home" : "/#home"} 
@@ -140,16 +141,98 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
             </Link>
           </nav>
 
-          {/* CTA */}
-          <a
-            href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-lg bg-white px-4 md:px-6 py-2 md:py-2.5 text-sm md:text-base font-semibold text-black hover:bg-white/95 hover:scale-105 active:scale-100 transition-all duration-200 shadow-[0_4px_12px_rgba(255,255,255,0.15)] hover:shadow-[0_6px_20px_rgba(255,255,255,0.25)]"
+          {/* Desktop CTAs */}
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="https://hub.freedombuildersinnercircle.com/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 md:px-5 py-2 md:py-2.5 text-sm md:text-base font-semibold border border-white/30 text-white rounded-lg hover:bg-white/10 hover:border-white/60 transition-all duration-200"
+            >
+              Login
+            </a>
+            <a
+              href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg bg-white px-4 md:px-6 py-2 md:py-2.5 text-sm md:text-base font-semibold text-black hover:bg-white/95 hover:scale-105 active:scale-100 transition-all duration-200 shadow-[0_4px_12px_rgba(255,255,255,0.15)] hover:shadow-[0_6px_20px_rgba(255,255,255,0.25)]"
+            >
+              Start now
+            </a>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+            aria-label="Toggle menu"
+            onClick={() => setIsMobileMenuOpen((open) => !open)}
           >
-            Start now
-          </a>
+            {isMobileMenuOpen ? (
+              // X icon
+              <svg className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              // Hamburger icon
+              <svg className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
+
+        {/* Mobile menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-white/10 pt-3 pb-4 space-y-2 text-sm text-white/80">
+            <Link
+              href={isKeynotePage ? "/keynote#home" : "/#home"}
+              className="block px-1 py-2 hover:text-white"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              href={isKeynotePage ? "/keynote#services" : "/#services"}
+              className="block px-1 py-2 hover:text-white"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Services
+            </Link>
+            <Link
+              href={isKeynotePage ? "/keynote#about" : "/#about"}
+              className="block px-1 py-2 hover:text-white"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link
+              href="/keynote"
+              className="block px-1 py-2 hover:text-white"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Speaker
+            </Link>
+            <a
+              href="https://hub.freedombuildersinnercircle.com/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block px-1 py-2 hover:text-white"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Login
+            </a>
+            <a
+              href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-white/95 transition-all duration-200"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Start now
+            </a>
+          </div>
+        )}
       </div>
     </header>
   );
