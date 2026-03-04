@@ -155,33 +155,7 @@ export default function Home() {
         </div>
 
         {/* Trusted By Logos - Marquee (Edge to Edge, remaining 6 logos) */}
-        <div className="mt-12 md:mt-16 overflow-hidden w-full">
-          <div
-            className="marquee flex items-center gap-14 will-change-transform"
-            style={{ animationDuration: "180s" }}
-          >
-            {[...Array(3)].flatMap((_, loop) =>
-              homepageColoredLogos.map((src) => {
-                // Encode the path to handle spaces and special characters
-                const encodedSrc = src
-                  .split("/")
-                  .map((part, i) => (i === 0 ? part : encodeURIComponent(part)))
-                  .join("/");
-                return (
-                  <Image
-                    key={`${loop}-${src}`}
-                    src={encodedSrc}
-                    alt="Trusted by logo"
-                    width={140}
-                    height={64}
-                    className="h-10 md:h-12 w-auto object-contain opacity-80 flex-shrink-0"
-                    unoptimized
-                  />
-                );
-              })
-            )}
-          </div>
-        </div>
+        
 
         <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
           {/* Achievements Grid (Keep first 2, optionally add 3rd) */}
@@ -196,6 +170,34 @@ export default function Home() {
                 <p className="text-white/85 text-sm md:text-base lg:text-lg leading-snug">{t}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 md:mt-16 w-screen relative left-1/2 right-1/2 -translate-x-1/2 overflow-hidden">
+            <div
+              className="marquee flex items-center gap-14 will-change-transform"
+              style={{ animationDuration: "180s" }}
+            >
+              {[...Array(3)].flatMap((_, loop) =>
+                homepageColoredLogos.map((src) => {
+                  // Encode the path to handle spaces and special characters
+                  const encodedSrc = src
+                    .split("/")
+                    .map((part, i) => (i === 0 ? part : encodeURIComponent(part)))
+                    .join("/");
+                  return (
+                    <Image
+                      key={`${loop}-${src}`}
+                      src={encodedSrc}
+                      alt="Trusted by logo"
+                      width={140}
+                      height={64}
+                      className="h-10 md:h-12 w-auto object-contain opacity-80 flex-shrink-0"
+                      unoptimized
+                    />
+                  );
+                })
+              )}
+            </div>
           </div>
 
           {/* Divider */}

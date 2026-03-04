@@ -1,6 +1,13 @@
-import Image from "next/image"
+"use client";
+
+import Image from "next/image";
+import { useState } from "react";
 
 export default function KeynoteHeroSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const videoId = "1QTGICP6HLW2m1hO64LRlkEar4_EhDY-N";
+  const videoEmbedUrl = `https://drive.google.com/file/d/${videoId}/preview`;
+
   return (
     <section className="relative bg-[#0a0a0a] py-8 md:py-12">
       <div className="mx-auto w-full px-6 lg:px-12">
@@ -54,7 +61,10 @@ export default function KeynoteHeroSection() {
 
                 {/* CTA: moved up + attached to copy */}
                 <div className="mt-7 sm:mt-8 md:mt-10 flex flex-col sm:flex-row items-start gap-4">
-                  <button className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-base sm:text-lg font-semibold text-white border border-white/25 bg-transparent hover:bg-white/5 transition hover:border-white/35 duration-300">
+                  <button 
+                    onClick={() => setIsModalOpen(true)}
+                    className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-base sm:text-lg font-semibold text-white border border-white/25 bg-transparent hover:bg-white/5 transition hover:border-white/35 duration-300"
+                  >
                     View Video Clips
                   </button>
                   <a
@@ -76,6 +86,51 @@ export default function KeynoteHeroSection() {
           <div className="h-6 sm:h-0" />
         </div>
       </div>
+
+      {/* Video Modal */}
+      {isModalOpen && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div 
+            className="relative w-full max-w-5xl mx-4 bg-black rounded-lg overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-black/50 hover:bg-black/70 rounded-full text-white transition-colors"
+              aria-label="Close modal"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            {/* Video Container */}
+            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                src={videoEmbedUrl}
+                className="absolute top-0 left-0 w-full h-full"
+                allow="autoplay"
+                allowFullScreen
+                title="Brian Moses Video Clips"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
