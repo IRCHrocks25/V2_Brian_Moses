@@ -48,7 +48,7 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
           {/* Desktop Links */}
           <nav className="hidden md:flex items-center gap-4 text-sm md:text-base text-white/80">
             <Link 
-              href={isKeynotePage ? "/keynote#home" : "/#home"} 
+              href="/#home"
               className="hover:text-white transition-colors scroll-smooth"
             >
               Home
@@ -151,14 +151,6 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
             >
               Login
             </a>
-            <a
-              href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg bg-white px-4 md:px-6 py-2 md:py-2.5 text-sm md:text-base font-semibold text-black hover:bg-white/95 hover:scale-105 active:scale-100 transition-all duration-200 shadow-[0_4px_12px_rgba(255,255,255,0.15)] hover:shadow-[0_6px_20px_rgba(255,255,255,0.25)]"
-            >
-              Start now
-            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -186,7 +178,7 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
         {isMobileMenuOpen && (
           <div className="md:hidden border-t border-white/10 pt-3 pb-4 space-y-2 text-sm text-white/80">
             <Link
-              href={isKeynotePage ? "/keynote#home" : "/#home"}
+              href="/#home"
               className="block px-1 py-2 hover:text-white"
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -221,15 +213,6 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Login
-            </a>
-            <a
-              href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-white/95 transition-all duration-200"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Start now
             </a>
           </div>
         )}

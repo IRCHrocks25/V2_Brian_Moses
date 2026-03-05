@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import WorkWithBrianSection from "@/components/WorkWithBrianSection";
@@ -86,16 +87,11 @@ export default function Home() {
                   </div>
 
                   <div className="mt-8 sm:mt-10">
-                    <a
-                      href="https://brianmoses.com/how-to-get-3-new-listings-fast-new"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block"
-                    >
+                    <Link href="/attract-business" className="inline-block">
                       <button className="rounded-full bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg lg:text-xl font-medium hover:bg-red-700 transition-colors">
                         See the System
                       </button>
-                    </a>
+                    </Link>
                   </div>
                 </div>
 
@@ -146,10 +142,10 @@ export default function Home() {
           </div>
 
           <div className="mt-12 md:mt-16 w-screen relative left-1/2 right-1/2 -translate-x-1/2 overflow-hidden">
-            <div
-              className="marquee flex items-center gap-14 will-change-transform"
-              style={{ animationDuration: "180s" }}
-            >
+          <div
+            className="marquee flex items-center gap-4 md:gap-6 will-change-transform"
+            style={{ animationDuration: "180s" }}
+          >
               {[...Array(3)].flatMap((_, loop) =>
                 homepageColoredLogos.map((src) => {
                   // Encode the path to handle spaces and special characters

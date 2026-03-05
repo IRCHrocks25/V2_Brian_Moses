@@ -56,17 +56,7 @@ export default function TypicalOutcomesSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-[95%] px-6 lg:px-8">
 
-        {/* TYPICAL OUTCOMES Heading */}
-        <div className="flex items-center justify-center gap-3 mb-8">
-          {/* Two overlapping circles */}
-          <div className="relative flex items-center">
-            <div className="w-3 h-3 bg-blue-300 rounded-full absolute left-0"></div>
-            <div className="w-3 h-3 bg-[#2aa7ff] rounded-full relative left-1.5"></div>
-          </div>
-          <h3 className="text-[#2aa7ff] text-sm md:text-base uppercase tracking-wider font-medium">
-            TYPICAL OUTCOMES
-          </h3>
-        </div>
+        
 
         {/* Main Heading */}
         <h2 className="text-center text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-4 leading-tight">
@@ -270,9 +260,7 @@ export default function TypicalOutcomesSection() {
               </div>
               <div className="mt-auto pt-6">
                 <a
-                  href="https://brianmoses.com/how-to-get-3-new-listings-fast-new"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/attract-business"
                   className="block"
                 >
                   <button className="w-full rounded-full bg-white text-black px-6 py-4 text-base md:text-lg font-semibold hover:bg-gray-100 transition-colors">

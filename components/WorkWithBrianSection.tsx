@@ -108,17 +108,15 @@ export default function WorkWithBrianSection() {
 
                 {/* Button */}
                 <div className="mt-auto pt-7">
-                  {p.title === "Inner Circle Group Coaching" ? (
-                    <a
-                      href="https://brianmoses.com/how-to-get-3-new-listings-fast-new"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex"
-                    >
-                      <button className="inline-flex items-center justify-center rounded-full border border-white/35 px-5 py-2.5 text-sm text-white/90 hover:text-white hover:border-white/60 transition">
-                        {p.buttonText || "Learn More"}
-                      </button>
-                    </a>
+                {p.title === "Inner Circle Group Coaching" ? (
+                  <a
+                    href="/attract-business"
+                    className="inline-flex"
+                  >
+                    <button className="inline-flex items-center justify-center rounded-full border border-white/35 px-5 py-2.5 text-sm text-white/90 hover:text-white hover:border-white/60 transition">
+                      {p.buttonText || "Learn More"}
+                    </button>
+                  </a>
                   ) : p.title === "1 on 1 Personalized & Customized Coaching" ? (
                     <a
                       href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"

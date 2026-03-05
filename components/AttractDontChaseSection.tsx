@@ -106,17 +106,15 @@ export default function AttractDontChaseSection() {
                 </p>
               </div>
               <div className="mt-auto pt-6">
-                <a
-                  href="https://brianmoses.com/how-to-get-3-new-listings-fast-new"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <button className="w-full rounded-full bg-black text-white px-6 py-4 text-base md:text-lg font-semibold hover:bg-gray-900 transition-colors">
-                    Inner Circle Group Coaching
-                  </button>
-                </a>
-              </div>
+              <a
+                href="/attract-business"
+                className="block"
+              >
+                <button className="w-full rounded-full bg-black text-white px-6 py-4 text-base md:text-lg font-semibold hover:bg-gray-900 transition-colors">
+                  Inner Circle Group Coaching
+                </button>
+              </a>
+            </div>
             </div>
             
             {/* 1-on-1 Coaching Card */}
