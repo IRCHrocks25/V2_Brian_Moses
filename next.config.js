@@ -7,6 +7,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'v2brianmoses-production.up.railway.app',
       },
+      {
+        protocol: 'https',
+        hostname: 'brianmoses.com',
+      },
     ],
   },
   // Allow the Railway hostname
