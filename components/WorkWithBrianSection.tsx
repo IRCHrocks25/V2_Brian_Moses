@@ -110,7 +110,7 @@ export default function WorkWithBrianSection() {
                 <div className="mt-auto pt-7">
                 {p.title === "Inner Circle Group Coaching" ? (
                   <a
-                    href="/attract-business"
+                    href="https://inner-circle.brianmoses.com/how-to-get-3-new-listings-fast-page"
                     className="inline-flex"
                   >
                     <button className="inline-flex items-center justify-center rounded-full border border-white/35 px-5 py-2.5 text-sm text-white/90 hover:text-white hover:border-white/60 transition">

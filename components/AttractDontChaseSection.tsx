@@ -107,7 +107,7 @@ export default function AttractDontChaseSection() {
               </div>
               <div className="mt-auto pt-6">
               <a
-                href="/attract-business"
+                href="https://inner-circle.brianmoses.com/how-to-get-3-new-listings-fast-page"
                 className="block"
               >
                 <button className="w-full rounded-full bg-black text-white px-6 py-4 text-base md:text-lg font-semibold hover:bg-gray-900 transition-colors">
