@@ -87,7 +87,7 @@ export default function Home() {
                   </div>
 
                   <div className="mt-8 sm:mt-10">
-                    <Link href="/attract-business" className="inline-block">
+                    <Link href="https://inner-circle.brianmoses.com/how-to-get-3-new-listings-fast-page" className="inline-block" target="_blank" rel="noopener noreferrer">
                       <button className="rounded-full bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg lg:text-xl font-medium hover:bg-red-700 transition-colors">
                         See the System
                       </button>

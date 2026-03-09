@@ -98,7 +98,7 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
                     Coaching
                   </Link>
                   <a
-                    href="https://brianmoses.com/how-to-get-3-new-listings-fast-new"
+                    href="https://inner-circle.brianmoses.com/how-to-get-3-new-listings-fast-new"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-colors"
@@ -116,7 +116,7 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
                     1 on 1
                   </a>
                   <a
-                    href="https://brianmoses.com/never-say-cant"
+                    href="https://inner-circle.brianmoses.com/never-say-cant"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-colors"
