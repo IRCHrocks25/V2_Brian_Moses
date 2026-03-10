@@ -5,8 +5,9 @@ import { useState } from "react";
 
 export default function KeynoteHeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [hasStartedVideo, setHasStartedVideo] = useState(false);
   const videoId = "1QTGICP6HLW2m1hO64LRlkEar4_EhDY-N";
-  const videoEmbedUrl = `https://drive.google.com/file/d/${videoId}/preview`;
+  const videoEmbedUrl = `https://drive.google.com/file/d/${videoId}/preview?autoplay=1`;
 
   return (
     <section className="relative bg-[#0a0a0a] py-8 md:py-12">
@@ -91,7 +92,10 @@ export default function KeynoteHeroSection() {
       {isModalOpen && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
-          onClick={() => setIsModalOpen(false)}
+          onClick={() => {
+            setIsModalOpen(false);
+            setHasStartedVideo(false);
+          }}
         >
           <div 
             className="relative w-full max-w-5xl mx-4 bg-black rounded-lg overflow-hidden shadow-2xl"
@@ -99,8 +103,11 @@ export default function KeynoteHeroSection() {
           >
             {/* Close Button */}
             <button
-              onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-black/50 hover:bg-black/70 rounded-full text-white transition-colors"
+              onClick={() => {
+                setIsModalOpen(false);
+                setHasStartedVideo(false);
+              }}
+              className="absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center bg-black/50 hover:bg-black/70 rounded-full text-white transition-colors"
               aria-label="Close modal"
             >
               <svg
@@ -120,13 +127,44 @@ export default function KeynoteHeroSection() {
 
             {/* Video Container */}
             <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-              <iframe
-                src={videoEmbedUrl}
-                className="absolute top-0 left-0 w-full h-full"
-                allow="autoplay"
-                allowFullScreen
-                title="Brian Moses Video Clips"
-              />
+              {/* Thumbnail - shown before user clicks play */}
+              {!hasStartedVideo && (
+                <button
+                  onClick={() => setHasStartedVideo(true)}
+                  className="absolute inset-0 z-10 w-full h-full cursor-pointer group focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black"
+                  aria-label="Play video"
+                >
+                  <Image
+                    src="/hero_section1.png"
+                    alt="Brian Moses Video Clips - Click to play"
+                    fill
+                    className="object-cover"
+                  />
+                  {/* Play button overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 group-hover:bg-white transition-transform shadow-lg">
+                      <svg
+                        className="w-8 h-8 md:w-10 md:h-10 text-black ml-1"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              )}
+
+              {/* Video iframe - loaded when user clicks play */}
+              {hasStartedVideo && (
+                <iframe
+                  src={videoEmbedUrl}
+                  className="absolute top-0 left-0 w-full h-full"
+                  allow="autoplay"
+                  allowFullScreen
+                  title="Brian Moses Video Clips"
+                />
+              )}
             </div>
           </div>
         </div>
