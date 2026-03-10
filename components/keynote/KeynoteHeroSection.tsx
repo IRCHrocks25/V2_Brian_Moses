@@ -6,8 +6,8 @@ import { useState } from "react";
 export default function KeynoteHeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [hasStartedVideo, setHasStartedVideo] = useState(false);
-  const videoId = "1QTGICP6HLW2m1hO64LRlkEar4_EhDY-N";
-  const videoEmbedUrl = `https://drive.google.com/file/d/${videoId}/preview?autoplay=1`;
+  const videoId = "DvRstx04Z-0";
+  const videoEmbedUrl = `https://www.youtube.com/embed/${videoId}?si=RECQAlbsuNMM-X7x&controls=0&autoplay=1`;
 
   return (
     <section className="relative bg-[#0a0a0a] py-8 md:py-12">
@@ -160,7 +160,8 @@ export default function KeynoteHeroSection() {
                 <iframe
                   src={videoEmbedUrl}
                   className="absolute top-0 left-0 w-full h-full"
-                  allow="autoplay"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                   title="Brian Moses Video Clips"
                 />
