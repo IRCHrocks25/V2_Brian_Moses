@@ -79,7 +79,7 @@ const testimonials = [
     body: "Thanks for all your help!",
     author: "Nick McLean",
     title: "Nick McLean Real Estate Group",
-    image: "/new_testimonials_v2/Nick_McLean.jpg",
+    image: "/new_testimonials_v2/Nick_McLean.png",
   },
 ];
 
