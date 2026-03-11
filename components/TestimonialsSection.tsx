@@ -1,8 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { DEFAULT_TESTIMONIALS } from "@/lib/default-testimonials";
 
+<<<<<<< Updated upstream
 const testimonials = [
   {
     header: "Brian, Great call with our team yesterday! You were right everyone was engaged.",
@@ -82,9 +85,13 @@ const testimonials = [
     image: "/new_testimonials_v2/Nick_McLean.png",
   },
 ];
+=======
+type TestimonialItem = { id?: string; header: string; body: string; author: string; title: string; image: string };
+>>>>>>> Stashed changes
 
-function TestimonialsMarquee() {
+function TestimonialsMarquee({ testimonials }: { testimonials: TestimonialItem[] }) {
   const [isPaused, setIsPaused] = useState(false);
+  if (!testimonials?.length) return null;
 
   return (
     <div 
@@ -95,7 +102,7 @@ function TestimonialsMarquee() {
       {[...Array(2)].flatMap((_, loop) =>
         testimonials.map((testimonial, i) => (
           <div
-            key={`${loop}-${i}`}
+            key={`${loop}-${testimonial.id ?? i}`}
             className="flex-shrink-0 w-[700px] sm:w-[750px] md:w-[850px] lg:w-[900px]"
           >
             <div className="group bg-white rounded-3xl overflow-hidden transition-all duration-300 flex h-[300px] sm:h-[350px] md:h-[400px]">
@@ -136,20 +143,40 @@ function TestimonialsMarquee() {
 }
 
 export default function TestimonialsSection() {
+  const searchParams = useSearchParams();
+  const preview = searchParams.get("preview");
+  const [testimonials, setTestimonials] = useState<TestimonialItem[]>([]);
+
+  useEffect(() => {
+    const url = "/api/testimonials" + (preview ? `?preview=${preview}` : "");
+    fetch(url)
+      .then((r) => r.json())
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setTestimonials(data);
+        } else {
+          setTestimonials(
+            DEFAULT_TESTIMONIALS.map((t, i) => ({ ...t, id: `default-${i}` }))
+          );
+        }
+      })
+      .catch(() => {
+        setTestimonials(
+          DEFAULT_TESTIMONIALS.map((t, i) => ({ ...t, id: `default-${i}` }))
+        );
+      });
+  }, [preview]);
+
   return (
     <section className="relative bg-white py-16 md:py-24 overflow-hidden">
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-12 mb-12">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          
-          
-          
-        </div>
+        <div className="text-center mb-12 md:mb-16"></div>
       </div>
 
       {/* Testimonials Marquee (Edge to Edge, scrollable) */}
       <div className="w-full -mx-6 lg:-mx-8 overflow-x-auto overflow-y-visible scrollbar-modern">
-        <TestimonialsMarquee />
+        <TestimonialsMarquee testimonials={testimonials} />
       </div>
     </section>
   );

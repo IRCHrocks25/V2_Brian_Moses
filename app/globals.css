@@ -7,6 +7,12 @@
   --foreground: #ffffff;
 }
 
+/* Dark mode: native form controls (select dropdowns, etc.) use dark styling */
+.dark,
+.dark select {
+  color-scheme: dark;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -78,5 +84,16 @@ body {
 
 .scrollbar-modern::-webkit-scrollbar-thumb:hover {
   background-color: rgba(21, 104, 247, 0.5);
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 

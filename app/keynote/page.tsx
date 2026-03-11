@@ -1,9 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import KeynoteHeroSection from "@/components/keynote/KeynoteHeroSection";
+import { getContent } from "@/lib/get-content";
 import KeynoteInspirationSection from "@/components/keynote/KeynoteInspirationSection";
 import KeynoteTransformationSection from "@/components/keynote/KeynoteTransformationSection";
 import KeynoteKeynotesWorkshopsSection from "@/components/keynote/KeynoteKeynotesWorkshopsSection";
@@ -15,15 +14,25 @@ import KeynoteTestimonialsSection from "@/components/keynote/KeynoteTestimonials
 import KeynoteBookSection from "@/components/keynote/KeynoteBookSection";
 import KeynoteTruthSection from "@/components/keynote/KeynoteTruthSection";
 
-export default function KeynotePage() {
+export default async function KeynotePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ preview?: string }>;
+}) {
+  const params = await searchParams;
+  const content = await getContent("keynote", params?.preview);
+
   return (
     <>
       {/* Navbar */}
-      <Navbar logoPath="/images/speakerpage_logo/main logo-speaker-white.png" />
+      <Navbar logoPath={content["img.navbar.keynote"] || "/images/speakerpage_logo/main logo-speaker-white.png"} />
 
       {/* HERO SECTION */}
       <div id="home">
-        <KeynoteHeroSection />
+        <KeynoteHeroSection
+          heroBg={content["bg.hero.keynote"] || "/hero_section1.png"}
+          videoThumbnail={content["bg.video.thumbnail"] || "/hero_section1.png"}
+        />
       </div>
 
       
@@ -65,7 +74,7 @@ export default function KeynotePage() {
 
       {/* Sharing A Story of Radical Transformation Section */}
       <div id="about">
-        <KeynoteTransformationSection />
+        <KeynoteTransformationSection imageSrc={content["img.keynote.transformation"] || "/images/Frame 1000007768.png"} />
       </div>
 
       {/* Signature Keynotes & Workshops Section */}
@@ -74,7 +83,7 @@ export default function KeynotePage() {
       </div>
 
       {/* Why Event Planners Choose Brian Moses Section */}
-      <KeynoteEventPlannersSection />
+      <KeynoteEventPlannersSection imageSrc={content["img.keynote.eventPlanners"] || "/three_images/Ekran Resmi 2026-02-10 15.21.03 1.png"} />
 
 
       {/* What Sets Brian Apart Section */}
@@ -86,10 +95,37 @@ export default function KeynotePage() {
      
 
       {/* Book Brian Moses Section */}
-      <KeynoteBookSection />
+      <KeynoteBookSection imageSrc={content["img.keynote.book"] || "/images/Frame 8.png"} />
 
       {/* Footer */}
-      <Footer logoPath="/images/speakerpage_logo/main logo-speaker-dark.png" />
+      <Footer
+        logoPath={content["img.footer.keynote"] || "/images/speakerpage_logo/main logo-speaker-dark.png"}
+        social={{
+          facebook: content["social.facebook"],
+          instagram: content["social.instagram"],
+          linkedin: content["social.linkedin"],
+          youtube: content["social.youtube"],
+        }}
+        contact={{
+          email: content["contact.email"],
+          phone: content["contact.phone"],
+        }}
+        extraSocial={Object.entries(content)
+          .filter(([k]) => k.startsWith("social.") && !["social.facebook", "social.instagram", "social.linkedin", "social.youtube"].includes(k))
+          .filter(([, v]) => v?.trim())
+          .map(([k, v]) => {
+            const icon = k.split(".")[1] || "link";
+            const label = icon === "link" ? "Other" : icon.charAt(0).toUpperCase() + icon.slice(1);
+            return { label, url: v, icon };
+          })}
+        extraContact={Object.entries(content)
+          .filter(([k]) => k.startsWith("contact.") && !["contact.email", "contact.phone"].includes(k))
+          .filter(([, v]) => v?.trim())
+          .map(([k, v]) => {
+            const name = k.split(".")[1] || "";
+            return { label: name ? name.charAt(0).toUpperCase() + name.slice(1) : k, value: v };
+          })}
+      />
     </>
   );
 }

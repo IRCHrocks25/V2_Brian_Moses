@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import WorkWithBrianSection from "@/components/WorkWithBrianSection";
@@ -10,6 +9,8 @@ import QuoteSection from "@/components/QuoteSection";
 import WhatYouWillLearnSection from "@/components/WhatYouWillLearnSection";
 import WorkLessEarnMoreSection from "@/components/WorkLessEarnMoreSection";
 import Footer from "@/components/Footer";
+import DynamicCTA from "@/components/DynamicCTA";
+import { getContent } from "@/lib/get-content";
 
 const homepageColoredLogos = [
   "/Brian_Moses_Main_Page_Logos/Frame 1000007701.png",
@@ -34,11 +35,18 @@ const homepageColoredLogos = [
   "/Brian_Moses_Main_Page_Logos/Frame 1000007720.png",
 ];
 
-export default function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ preview?: string }>;
+}) {
+  const params = await searchParams;
+  const content = await getContent("home", params?.preview);
+
   return (
     <>
       {/* Navbar */}
-      <Navbar />
+      <Navbar logoPath={content["img.navbar.home"] || "/images/main logo-coaching-white.png"} />
 
       {/* HERO SECTION */}
       <section id="home" className="relative bg-[#0a0a0a] py-8 md:py-12">
@@ -46,7 +54,7 @@ export default function Home() {
           {/* Background Image Section with Rounded Corners */}
           <div className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[92vh] rounded-lg md:rounded-3xl overflow-hidden">
             <Image
-              src="/images/Frame 8.png"
+              src={content["bg.hero.home"] || "/images/Frame 8.png"}
               alt="Hero background"
               fill
               priority
@@ -59,39 +67,42 @@ export default function Home() {
                 {/* Left Content */}
                 <div className="pl-6 sm:pl-8 md:pl-16 lg:pl-24">
                   <h1 className="text-white font-bold leading-[1.05] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-                    Attract, Don&apos;t Chase.
+                    {content["hero.headline"] || "Attract, Don't Chase."}
                   </h1>
                   
                   <p className="mt-4 text-white/85 text-lg sm:text-xl md:text-2xl font-semibold">
-                    More of What Your Doing Won&apos;t Fix Your&nbsp;Business - Systems&nbsp;Will.
+                    {content["hero.subheadline"] || "More of What Your Doing Won't Fix Your Business - Systems Will."}
                   </p>
 
                   <div className="mt-6 sm:mt-8 space-y-4 sm:space-y-6">
                     <p className="text-white/85 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
-                      A Proven System that helps you close more deals - without chasing leads, spending tons of money for leads, or burning out.
+                      {content["hero.paragraph1"] || "A Proven System that helps you close more deals - without chasing leads, spending tons of money for leads, or burning out."}
                     </p>
 
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
-                      Brian Moses opens his entire playbook - built from selling over 3,500&nbsp;homes - and walks you step-by-step through exactly what to&nbsp;do.
+                      {content["hero.paragraph2"] || "Brian Moses opens his entire playbook - built from selling over 3,500 homes - and walks you step-by-step through exactly what to do."}
                     </p>
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
-                      Follow the&nbsp;system, and the&nbsp;results take&nbsp;care of&nbsp;themselves.
+                      {content["hero.paragraph3"] || "Follow the system, and the results take care of themselves."}
                     </p>
 
                     <p
                       className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed"
                       style={{ color: "#AADBFF" }}
                     >
-                      For Agents who want consistency and predictability in their business --- Clear. Practical. No hype.
+                      {content["hero.tagline"] || "For Agents who want consistency and predictability in their business --- Clear. Practical. No hype."}
                     </p>
                   </div>
 
-                  <div className="mt-8 sm:mt-10">
-                    <Link href="https://inner-circle.brianmoses.com/how-to-get-3-new-listings-fast-page" className="inline-block" target="_blank" rel="noopener noreferrer">
-                      <button className="rounded-full bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg lg:text-xl font-medium hover:bg-red-700 transition-colors">
-                        See the System
-                      </button>
-                    </Link>
+                  <div className="mt-8 sm:mt-10 flex flex-wrap gap-3">
+                    <DynamicCTA
+                      placement="hero"
+                      page="home"
+                      fallback={{
+                        text: content["hero.ctaText"] || "See the System",
+                        url: content["hero.ctaUrl"] || "https://inner-circle.brianmoses.com/how-to-get-3-new-listings-fast-page",
+                      }}
+                    />
                   </div>
                 </div>
 
@@ -109,17 +120,27 @@ export default function Home() {
       </div>
 
       {/* ACHIEVEMENTS & SOCIAL PROOF */}
-      <section className="relative py-16 md:py-20">
+      <section className="relative py-16 md:py-20 overflow-hidden">
+        {content["bg.achievements"] && (
+          <div className="absolute inset-0">
+            <Image
+              src={content["bg.achievements"]}
+              alt=""
+              fill
+              className="object-cover opacity-30"
+            />
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1f3a] to-[#0a0a0a]"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-transparent to-[#0a0a0a]"></div>
         <div className="relative z-10">
         <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
           {/* Main Heading */}
           <h2 className="text-center text-white font-light tracking-wide text-base md:text-lg lg:text-xl xl:text-2xl mb-4">
-            Here&apos;s Why Agents Trust Brian&apos;s System
+            {content["achievements.heading"] || "Here's Why Agents Trust Brian's System"}
           </h2>
           <p className="text-center text-white font-light tracking-wide text-lg md:text-xl lg:text-2xl xl:text-3xl max-w-5xl mx-auto leading-relaxed">
-            Brian Has Inspired More Than 50,000 Real Estate Agents & Industry Professionals Across North America Including All Major Brands
+            {content["achievements.subheading"] || "Brian Has Inspired More Than 50,000 Real Estate Agents & Industry Professionals Across North America Including All Major Brands"}
           </p>
         </div>
 
@@ -130,9 +151,9 @@ export default function Home() {
           {/* Achievements Grid (Keep first 2, optionally add 3rd) */}
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {[
-              "Named one of the 125 Most Influential People in Real Estate (Success Magazine)",
-              "Ranked #2 Worldwide in a major real estate franchise, 7 years in the Top 10",
-              "Brian Moses coaches and trains North America's most successful agents. These agents average over $1 Million Dollars in Annual Income and you can too.",
+              content["achievements.item1"] || "Named one of the 125 Most Influential People in Real Estate (Success Magazine)",
+              content["achievements.item2"] || "Ranked #2 Worldwide in a major real estate franchise, 7 years in the Top 10",
+              content["achievements.item3"] || "Brian Moses coaches and trains North America's most successful agents. These agents average over $1 Million Dollars in Annual Income and you can too.",
             ].map((t, i) => (
               <div key={i} className="flex gap-3">
                 <span className="mt-2 h-2.5 w-2.5 flex-none bg-[#AADBFF]" />
@@ -212,31 +233,67 @@ export default function Home() {
 
       {/* Work with Brian Section */}
       <div id="services">
-        <WorkWithBrianSection />
+        <WorkWithBrianSection content={content} />
       </div>
 
       {/* Attract Don't Chase Section */}
-      <AttractDontChaseSection />
+      <AttractDontChaseSection
+        plusIconSrc={content["img.attractDontChase.plus"] || "/images/plus_icon.png"}
+        peopleIconSrc={content["img.attractDontChase.people"] || "/images/people_icon.png"}
+        content={content}
+      />
 
       {/* Typical Outcomes Section */}
-      <TypicalOutcomesSection />
+      <TypicalOutcomesSection
+        bgImage={content["img.typicalOutcomes.bg"] || "/background.png"}
+        brianImage={content["img.typicalOutcomes.brian"] || "/images/brian18.png"}
+        tonyImage={content["img.typicalOutcomes.tony"] || "/Tony_Robbins_court.png"}
+        content={content}
+      />
 
       {/* Brian Story Section */}
       <div id="about">
-        <BrianStorySection />
+        <BrianStorySection imageSrc={content["img.brianStory"] || "/images/Frame 1000007768.png"} content={content} />
       </div>
 
       {/* Quote Section */}
-      <QuoteSection />
+      <QuoteSection imageSrc={content["img.quote"] || "/hero_section1.png"} content={content} />
 
       {/* What You Will Learn Section */}
-      <WhatYouWillLearnSection />
+      <WhatYouWillLearnSection content={content} />
 
       {/* Work Less Earn More Section */}
-      <WorkLessEarnMoreSection />
+      <WorkLessEarnMoreSection imageSrc={content["img.workLessEarnMore"] || "/images/image (32) 1.png"} content={content} />
 
       {/* Footer */}
-      <Footer />
+      <Footer
+        logoPath={content["img.footer.home"] || "/images/brian_moses_footer_logo.png"}
+        social={{
+          facebook: content["social.facebook"],
+          instagram: content["social.instagram"],
+          linkedin: content["social.linkedin"],
+          youtube: content["social.youtube"],
+        }}
+        contact={{
+          email: content["contact.email"],
+          phone: content["contact.phone"],
+        }}
+        extraSocial={Object.entries(content)
+          .filter(([k]) => k.startsWith("social.") && !["social.facebook", "social.instagram", "social.linkedin", "social.youtube"].includes(k))
+          .filter(([, v]) => v?.trim())
+          .map(([k, v]) => {
+            const icon = k.split(".")[1] || "link";
+            const label = icon === "link" ? "Other" : icon.charAt(0).toUpperCase() + icon.slice(1);
+            return { label, url: v, icon };
+          })}
+        extraContact={Object.entries(content)
+          .filter(([k]) => k.startsWith("contact.") && !["contact.email", "contact.phone"].includes(k))
+          .filter(([, v]) => v?.trim())
+          .map(([k, v]) => {
+            const name = k.split(".")[1] || "";
+            return { label: name ? name.charAt(0).toUpperCase() + name.slice(1) : k, value: v };
+          })}
+      />
     </>
   );
 }

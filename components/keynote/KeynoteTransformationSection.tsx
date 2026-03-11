@@ -1,13 +1,17 @@
 import Image from "next/image";
 
-export default function KeynoteTransformationSection() {
+interface KeynoteTransformationSectionProps {
+  imageSrc?: string;
+}
+
+export default function KeynoteTransformationSection({ imageSrc = "/images/Frame 1000007768.png" }: KeynoteTransformationSectionProps) {
   return (
     <section className="relative bg-[#0a0a0a] py-16 md:py-24 overflow-hidden">
       <div className="mx-auto w-full px-6 lg:px-12">
         {/* Background Image Section with Rounded Corners */}
         <div className="relative min-h-[80vh] md:min-h-[90vh] rounded-lg md:rounded-3xl overflow-hidden">
           <Image
-            src="/images/Frame 1000007768.png"
+            src={imageSrc}
             alt="Brian Moses transformation story"
             fill
             className="object-cover object-center"

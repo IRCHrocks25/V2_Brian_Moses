@@ -3,7 +3,12 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function KeynoteHeroSection() {
+interface KeynoteHeroSectionProps {
+  heroBg?: string;
+  videoThumbnail?: string;
+}
+
+export default function KeynoteHeroSection({ heroBg = "/hero_section1.png", videoThumbnail = "/hero_section1.png" }: KeynoteHeroSectionProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [hasStartedVideo, setHasStartedVideo] = useState(false);
   const videoId = "DvRstx04Z-0";
@@ -17,7 +22,7 @@ export default function KeynoteHeroSection() {
           {/* BACKGROUND */}
           <div className="absolute inset-0">
             <Image
-              src="/hero_section1.png"
+              src={heroBg}
               alt="Hero background"
               fill
               priority
@@ -135,7 +140,7 @@ export default function KeynoteHeroSection() {
                   aria-label="Play video"
                 >
                   <Image
-                    src="/hero_section1.png"
+                    src={videoThumbnail}
                     alt="Brian Moses Video Clips - Click to play"
                     fill
                     className="object-cover"

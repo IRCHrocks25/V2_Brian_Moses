@@ -1,13 +1,17 @@
 import Image from "next/image";
 
-export default function KeynoteEventPlannersSection() {
+interface KeynoteEventPlannersSectionProps {
+  imageSrc?: string;
+}
+
+export default function KeynoteEventPlannersSection({ imageSrc = "/three_images/Ekran Resmi 2026-02-10 15.21.03 1.png" }: KeynoteEventPlannersSectionProps) {
   return (
     <section className="relative bg-[#0a0a0a] py-16 md:py-24 overflow-hidden">
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-12">
         {/* Background Image Section with Enhanced Styling */}
         <div className="relative min-h-[75vh] md:min-h-[85vh] rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_40px_140px_rgba(0,0,0,0.85)]">
           <Image
-            src="/three_images/Ekran Resmi 2026-02-10 15.21.03 1.png"
+            src={imageSrc}
             alt="Brian Moses speaking"
             fill
             className="object-cover object-top"

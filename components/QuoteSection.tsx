@@ -1,12 +1,17 @@
 import Image from "next/image";
 
-export default function QuoteSection() {
+interface QuoteSectionProps {
+  imageSrc?: string;
+  content?: Record<string, string>;
+}
+
+export default function QuoteSection({ imageSrc = "/hero_section1.png", content = {} }: QuoteSectionProps) {
   return (
     <section className="relative py-16 md:py-24 overflow-hidden min-h-[500px] md:min-h-[600px] lg:min-h-[700px]">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/hero_section1.png"
+          src={imageSrc}
           alt="Brian Moses speaking on stage"
           fill
           className="object-cover object-center"
@@ -22,40 +27,29 @@ export default function QuoteSection() {
           {/* Right: Quote and Text */}
           <div className="text-white pl-12 md:pl-0">
             {/* Quote */}
-            <blockquote className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3">
-              <span className="bg-gradient-to-r from-[#1568F7] to-[#2aa7ff] bg-clip-text text-transparent">
-                &quot;Success isn&apos;t just about what
-                <br />
-                you earn.{" "}
-              </span>
-              <span className="text-white">
-                It&apos;s about what you
-                <br />
-                get to experience because of
-                <br />
-                what you earn.&quot;
-              </span>
+            <blockquote className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-3 whitespace-pre-line">
+              {content["quote.text"] || "\"Success isn't just about what you earn. It's about what you get to experience because of what you earn.\""}
             </blockquote>
 
             {/* Attribution */}
             <p className="text-white/80 text-sm md:text-base uppercase tracking-wider mb-4">
-              BRIAN MOSES
+              {content["quote.attribution"] || "BRIAN MOSES"}
             </p>
 
             {/* Description */}
             <p className="text-white/90 text-base md:text-lg leading-relaxed mb-6">
-              If you&apos;re ready to stop chasing and start attracting a better business and life, Brian is your guide.
+              {content["quote.desc"] || "If you're ready to stop chasing and start attracting a better business and life, Brian is your guide."}
             </p>
 
             {/* CTA Button */}
             <a
-              href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
+              href={content["quote.buttonUrl"] || "https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
             >
               <button className="rounded-full bg-white text-black px-8 py-4 text-base md:text-lg font-medium hover:bg-white/90 transition-colors">
-                Book a Free Discovery Call
+                {content["quote.buttonText"] || "Book a Free Discovery Call"}
               </button>
             </a>
           </div>

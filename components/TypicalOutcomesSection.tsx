@@ -3,48 +3,51 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const outcomes = [
+interface TypicalOutcomesSectionProps {
+  bgImage?: string;
+  brianImage?: string;
+  tonyImage?: string;
+  content?: Record<string, string>;
+}
+
+const getOutcomes = (content: Record<string, string>) => [
   {
-    icon: "filled",
-    title: "Immediately Increase Your Sales",
-    description:
-      "Learn strategies to 'reduce your wasteful expenses and increase your sales and income immediately'",
+    icon: "filled" as const,
+    title: content["outcomes.outcome1.title"] || "Immediately Increase Your Sales",
+    description: content["outcomes.outcome1.desc"] || "Learn strategies to 'reduce your wasteful expenses and increase your sales and income immediately'",
   },
   {
-    icon: "outline",
-    title: "Dominate Your Local Market",
-    description:
-      "Discover how to 'attract buyers and sellers, differentiate yourself from your competitors, increase your average sales price, and become the dominant agent in your market!'",
+    icon: "outline" as const,
+    title: content["outcomes.outcome2.title"] || "Dominate Your Local Market",
+    description: content["outcomes.outcome2.desc"] || "Discover how to 'attract buyers and sellers, differentiate yourself from your competitors, increase your average sales price, and become the dominant agent in your market!'",
   },
   {
-    icon: "outline",
-    title: "Build a Predictable Business",
-    description:
-      "Create a real estate business that offers 'predictability' and allows you to 'take time off,' freeing you from being constantly on call.",
+    icon: "outline" as const,
+    title: content["outcomes.outcome3.title"] || "Build a Predictable Business",
+    description: content["outcomes.outcome3.desc"] || "Create a real estate business that offers 'predictability' and allows you to 'take time off,' freeing you from being constantly on call.",
   },
   {
-    icon: "outline",
-    title: "Create the Life You Desire",
-    description:
-      "Design 'the business and life you desire', achieving financial freedom that serves your overall happiness.",
+    icon: "outline" as const,
+    title: content["outcomes.outcome4.title"] || "Create the Life You Desire",
+    description: content["outcomes.outcome4.desc"] || "Design 'the business and life you desire', achieving financial freedom that serves your overall happiness.",
   },
   {
-    icon: "outline",
-    title: "Attract Lots of Qualified Leads",
-    description:
-      "Implement 'strategies, principals and quality lead generation best practices that will accelerate your income and transform your life!'. Ensure a 'consistent flow, a steady stream of highly motivated leads' right to you.",
+    icon: "outline" as const,
+    title: content["outcomes.outcome5.title"] || "Attract Lots of Qualified Leads",
+    description: content["outcomes.outcome5.desc"] || "Implement 'strategies, principals and quality lead generation best practices that will accelerate your income and transform your life!'. Ensure a 'consistent flow, a steady stream of highly motivated leads' right to you.",
   },
 ];
 
-export default function TypicalOutcomesSection() {
+export default function TypicalOutcomesSection({ bgImage = "/background.png", brianImage = "/images/brian18.png", tonyImage = "/Tony_Robbins_court.png", content = {} }: TypicalOutcomesSectionProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(0);
+  const outcomes = getOutcomes(content);
 
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/background.png"
+          src={bgImage}
           alt="Background"
           fill
           sizes="100vw"
@@ -60,20 +63,20 @@ export default function TypicalOutcomesSection() {
 
         {/* Main Heading */}
         <h2 className="text-center text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-4 leading-tight">
-          Your Growth Deserves More Than Advice.
+          {content["outcomes.heading1"] || "Your Growth Deserves More Than Advice."}
         </h2>
         <h2 className="text-center text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-6 leading-tight">
-          It Deserves Proven Experience.
+          {content["outcomes.heading2"] || "It Deserves Proven Experience."}
         </h2>
         <h3 className="text-center text-[#2aa7ff] font-bold text-xl md:text-2xl lg:text-3xl mb-12">
-          The Real Estate Coach You Hire Matters!
+          {content["outcomes.heading3"] || "The Real Estate Coach You Hire Matters!"}
         </h3>
 
         {/* Opening Statement - Card Style */}
         <div className="max-w-5xl mx-auto mb-12">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20">
             <p className="text-white text-lg md:text-xl lg:text-2xl text-left leading-relaxed font-medium">
-              Just like there&apos;s no shortage of real estate agents, there&apos;s no shortage of self proclaimed coaches... <span className="text-[#2aa7ff] font-bold">The difference comes down to experience.</span>
+              {content["outcomes.statement"] || "Just like there's no shortage of real estate agents, there's no shortage of self proclaimed coaches... The difference comes down to experience."}
             </p>
           </div>
         </div>
@@ -132,12 +135,12 @@ export default function TypicalOutcomesSection() {
         <div className="max-w-5xl mx-auto space-y-8 mb-16">
           {/* Section 1 - The Problem */}
           <div className="bg-white/5 rounded-xl p-6 md:p-8 border-l-4 border-[#2aa7ff]">
-            <h4 className="text-white font-bold text-lg md:text-xl mb-4">When Choosing a Coach, Experience Matters</h4>
+            <h4 className="text-white font-bold text-lg md:text-xl mb-4">{content["outcomes.section1.title"] || "When Choosing a Coach, Experience Matters"}</h4>
             <p className="text-white/90 text-base md:text-lg leading-relaxed mb-4">
-              It matters whether they&apos;ve actually accomplished what you&apos;re trying to achieve - or whether they&apos;re simply repeating what they&apos;ve been taught.
+              {content["outcomes.section1.p1"] || "It matters whether they've actually accomplished what you're trying to achieve - or whether they're simply repeating what they've been taught."}
             </p>
             <p className="text-white/90 text-base md:text-lg leading-relaxed">
-              Many large coaching organizations rely on active agents to coach on the side. While well intended, their guidance is often limited to personal experience and constrained by their own production demands.
+              {content["outcomes.section1.p2"] || "Many large coaching organizations rely on active agents to coach on the side. While well intended, their guidance is often limited to personal experience and constrained by their own production demands."}
             </p>
           </div>
 
@@ -145,21 +148,21 @@ export default function TypicalOutcomesSection() {
           <div className="bg-gradient-to-r from-[#2aa7ff]/10 to-transparent rounded-xl p-6 md:p-8 border border-[#2aa7ff]/20">
             <h4 className="text-[#2aa7ff] font-bold text-lg md:text-xl mb-4 flex items-center gap-2">
               <span className="w-2 h-2 bg-[#2aa7ff] rounded-full"></span>
-              Brian Moses Brings a Different Level of Depth
+              {content["outcomes.section2.title"] || "Brian Moses Brings a Different Level of Depth"}
             </h4>
             <p className="text-white text-base md:text-lg leading-relaxed mb-4">
-              He has sold more than <span className="font-bold text-[#2aa7ff]">3,500 homes</span>, twice been ranked <span className="font-bold text-[#2aa7ff]">#2 worldwide</span> and amongst the <span className="font-bold text-[#2aa7ff]">top 10 in sales for seven consecutive years</span>.
+              {content["outcomes.section2.p1"] || "He has sold more than 3,500 homes, twice been ranked #2 worldwide and amongst the top 10 in sales for seven consecutive years."}
             </p>
             <p className="text-white text-base md:text-lg leading-relaxed">
-              Beyond production, Brian worked directly for <span className="font-semibold">Tony Robbins & Chet Holmes</span> at Business Breakthroughs International as a <span className="font-semibold">Sr. Level Executive Business Strategist</span>, gaining elite training in business optimization, scalability and performance maximization.
+              {content["outcomes.section2.p2"] || "Beyond production, Brian worked directly for Tony Robbins & Chet Holmes at Business Breakthroughs International as a Sr. Level Executive Business Strategist, gaining elite training in business optimization, scalability and performance maximization."}
             </p>
           </div>
 
           {/* Section 3 - Customized Approach */}
           <div className="bg-white/5 rounded-xl p-6 md:p-8">
-            <h4 className="text-white font-bold text-lg md:text-xl mb-4">No One-Size-Fits-All Approach</h4>
+            <h4 className="text-white font-bold text-lg md:text-xl mb-4">{content["outcomes.section3.title"] || "No One-Size-Fits-All Approach"}</h4>
             <p className="text-white/90 text-base md:text-lg leading-relaxed">
-              When it comes to growing and scaling your business. Brian&apos;s customizes your coaching to the agent, their goals and is specific to their market, resulting in a sustainable system, measured results and increased profitability.
+              {content["outcomes.section3.p"] || "When it comes to growing and scaling your business. Brian's customizes your coaching to the agent, their goals and is specific to their market, resulting in a sustainable system, measured results and increased profitability."}
             </p>
           </div>
 
@@ -171,7 +174,7 @@ export default function TypicalOutcomesSection() {
                 {/* Top Image - Brian */}
                 <div className="relative w-full h-[300px] md:h-[340px] lg:h-[380px] rounded-xl overflow-hidden border-2 border-[#2aa7ff]/30 shadow-[0_20px_60px_rgba(42,167,255,0.3)]">
                   <Image
-                    src="/images/brian18.png"
+                    src={brianImage}
                     alt="Brian Moses"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
@@ -186,7 +189,7 @@ export default function TypicalOutcomesSection() {
                 {/* Bottom Image - Tony Robbins Court */}
                 <div className="relative w-full h-[260px] md:h-[300px] lg:h-[340px] rounded-xl overflow-hidden border-2 border-[#2aa7ff]/30 shadow-[0_20px_60px_rgba(42,167,255,0.25)]">
                   <Image
-                    src="/Tony_Robbins_court.png"
+                    src={tonyImage}
                     alt="Tony Robbins Event with Brian Moses"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
@@ -200,10 +203,10 @@ export default function TypicalOutcomesSection() {
               <div className="flex flex-col justify-center">
                 <h4 className="text-[#2aa7ff] font-bold text-lg md:text-xl mb-4 flex items-center gap-2">
                   <span className="w-2 h-2 bg-[#2aa7ff] rounded-full"></span>
-                  Mastering Human Performance
+                  {content["outcomes.section4.title"] || "Mastering Human Performance"}
                 </h4>
                 <p className="text-white text-base md:text-lg leading-relaxed">
-                  Beyond production and strategy, lasting growth requires mastering human performance. For more than <span className="font-bold text-[#2aa7ff]">30 years</span> Brian has worked in close alignment with <span className="font-semibold">Tony Robbins and Robbins Research International</span>, developing deep expertise in human psychology, behavior change and peak performance. This added skill and experience allows him to identify the real constraints holding agents back - often not market conditions or lead flow but unseen limiting beliefs, comfort zones and unconscious patterns that sabotage growth.
+                  {content["outcomes.section4.p"] || "Beyond production and strategy, lasting growth requires mastering human performance. For more than 30 years Brian has worked in close alignment with Tony Robbins and Robbins Research International, developing deep expertise in human psychology, behavior change and peak performance. This added skill and experience allows him to identify the real constraints holding agents back - often not market conditions or lead flow but unseen limiting beliefs, comfort zones and unconscious patterns that sabotage growth."}
                 </p>
               </div>
             </div>
@@ -212,7 +215,7 @@ export default function TypicalOutcomesSection() {
           {/* Closing Statement */}
           <div className="text-center bg-[#2aa7ff]/10 rounded-xl p-6 md:p-8 border-2 border-[#2aa7ff]/30">
             <p className="text-white text-lg md:text-xl lg:text-2xl font-semibold">
-              Brian's Strategies have been proven repeatedly through the success of the <span className="text-[#2aa7ff] font-bold">thousands</span> he has impacted over the years.
+              {content["outcomes.closing"] || "Brian's Strategies have been proven repeatedly through the success of the thousands he has impacted over the years."}
             </p>
           </div>
         </div>
@@ -255,16 +258,16 @@ export default function TypicalOutcomesSection() {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 shadow-lg hover:shadow-xl transition-shadow flex flex-col">
               <div className="flex-grow">
                 <p className="text-white text-sm md:text-base leading-relaxed mb-4">
-                For the agent producing 0-15 sales annually,  income is under $200,000 and they want a system and process that&apos;s predictable, reliable and duplicatable to produce more FAST!  
+                  {content["outcomes.cta1.desc"] || "For the agent producing 0-15 sales annually, income is under $200,000 and they want a system and process that's predictable, reliable and duplicatable to produce more FAST!"}
                 </p>
               </div>
               <div className="mt-auto pt-6">
                 <a
-                  href="https://inner-circle.brianmoses.com/how-to-get-3-new-listings-fast-page"
+                  href={content["outcomes.cta1.url"] || "https://inner-circle.brianmoses.com/how-to-get-3-new-listings-fast-page"}
                   className="block"
                 >
                   <button className="w-full rounded-full bg-white text-black px-6 py-4 text-base md:text-lg font-semibold hover:bg-gray-100 transition-colors">
-                    Inner Circle Group Coaching
+                    {content["outcomes.cta1.buttonText"] || "Inner Circle Group Coaching"}
                   </button>
                 </a>
               </div>
@@ -274,18 +277,18 @@ export default function TypicalOutcomesSection() {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 shadow-lg hover:shadow-xl transition-shadow flex flex-col">
               <div className="flex-grow">
                 <p className="text-white text-sm md:text-base leading-relaxed mb-4">
-                For the Producer and/or Team Leader doing $200,000+ a year, wants more but without giving up their life.  This is a 1 on 1 experience that will transform your business and life at scale.  Apply for your free business evaluation call and secure your spot today.
+                  {content["outcomes.cta2.desc"] || "For the Producer and/or Team Leader doing $200,000+ a year, wants more but without giving up their life. This is a 1 on 1 experience that will transform your business and life at scale. Apply for your free business evaluation call and secure your spot today."}
                 </p>
               </div>
               <div className="mt-auto pt-6">
                 <a
-                  href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
+                  href={content["outcomes.cta2.url"] || "https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
                 >
                   <button className="w-full rounded-full bg-white text-black px-6 py-4 text-base md:text-lg font-semibold hover:bg-gray-100 transition-colors">
-                    Apply Now
+                    {content["outcomes.cta2.buttonText"] || "Apply Now"}
                   </button>
                 </a>
               </div>

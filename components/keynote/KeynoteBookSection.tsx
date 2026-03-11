@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-export default function KeynoteBookSection() {
+interface KeynoteBookSectionProps {
+  imageSrc?: string;
+}
+
+export default function KeynoteBookSection({ imageSrc = "/images/Frame 8.png" }: KeynoteBookSectionProps) {
   return (
     <section className="relative bg-[#0a0a0a] py-16 md:py-24 overflow-hidden">
       <div className="mx-auto w-full max-w-[95rem] px-6 lg:px-12">
@@ -9,7 +13,7 @@ export default function KeynoteBookSection() {
           {/* Background */}
           <div className="absolute inset-0">
             <Image
-              src="/images/Frame 8.png"
+              src={imageSrc}
               alt="Book Brian Moses"
               fill
               className="object-cover object-center"

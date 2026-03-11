@@ -1,10 +1,27 @@
 import Image from "next/image";
+import { SocialIcon } from "@/lib/social-icons";
 
 interface FooterProps {
   logoPath?: string;
+  social?: { facebook?: string; instagram?: string; linkedin?: string; youtube?: string; [key: string]: string | undefined };
+  contact?: { email?: string; phone?: string; [key: string]: string | undefined };
+  extraSocial?: { label: string; url: string; icon?: string }[];
+  extraContact?: { label: string; value: string }[];
 }
 
-export default function Footer({ logoPath = "/images/brian_moses_footer_logo.png" }: FooterProps) {
+export default function Footer({
+  logoPath = "/images/brian_moses_footer_logo.png",
+  social = {},
+  contact = {},
+  extraSocial = [],
+  extraContact = [],
+}: FooterProps) {
+  const fb = social.facebook || "https://www.facebook.com/BrianRichardMoses";
+  const ig = social.instagram || "https://www.instagram.com/coachbrianmoses/";
+  const li = social.linkedin || "https://www.linkedin.com/in/brianmoses/";
+  const yt = social.youtube || "https://www.youtube.com/@BMosesNH";
+  const email = contact.email || "Brian@BrianMoses.com";
+  const phone = contact.phone || "+16038601104";
   return (
     <footer className="bg-white py-12 md:py-16">
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
@@ -28,7 +45,7 @@ export default function Footer({ logoPath = "/images/brian_moses_footer_logo.png
             <div className="flex flex-col gap-4">
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/BrianRichardMoses"
+                href={fb}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-black flex items-center justify-center hover:bg-black/90 transition-colors"
@@ -41,7 +58,7 @@ export default function Footer({ logoPath = "/images/brian_moses_footer_logo.png
 
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/coachbrianmoses/"
+                href={ig}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-black flex items-center justify-center hover:bg-black/90 transition-colors"
@@ -54,7 +71,7 @@ export default function Footer({ logoPath = "/images/brian_moses_footer_logo.png
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/in/brianmoses/"
+                href={li}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-black flex items-center justify-center hover:bg-black/90 transition-colors"
@@ -67,7 +84,7 @@ export default function Footer({ logoPath = "/images/brian_moses_footer_logo.png
 
               {/* YouTube */}
               <a
-                href="https://www.youtube.com/@BMosesNH"
+                href={yt}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-black flex items-center justify-center hover:bg-black/90 transition-colors"
@@ -77,6 +94,19 @@ export default function Footer({ logoPath = "/images/brian_moses_footer_logo.png
                   <path d="M23.498 6.186a2.974 2.974 0 0 0-2.09-2.103C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.408.583a2.974 2.974 0 0 0-2.09 2.103A31.258 31.258 0 0 0 .5 11.75a31.258 31.258 0 0 0 .002 5.564 2.974 2.974 0 0 0 2.09 2.103C4.495 20 12 20 12 20s7.505 0 9.408-.583a2.974 2.974 0 0 0 2.09-2.103A31.258 31.258 0 0 0 23.5 11.75a31.258 31.258 0 0 0-.002-5.564zM9.75 15.5v-7l6 3.5-6 3.5z" />
                 </svg>
               </a>
+              {/* Extra custom social links */}
+              {extraSocial.filter((s) => s.url?.trim()).map((item) => (
+                <a
+                  key={item.label + item.url}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-black flex items-center justify-center hover:bg-black/90 transition-colors"
+                  aria-label={item.label}
+                >
+                  <SocialIcon platform={item.icon || "link"} />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -131,20 +161,36 @@ export default function Footer({ logoPath = "/images/brian_moses_footer_logo.png
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="mailto:Brian@BrianMoses.com"
+                    href={`mailto:${email}`}
                     className="text-gray-600 hover:text-black transition-colors text-sm md:text-base"
                   >
-                    Brian@BrianMoses.com
+                    {email}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="tel:+16038601104"
+                    href={`tel:${phone.replace(/\D/g, "")}`}
                     className="text-gray-600 hover:text-black transition-colors text-sm md:text-base"
                   >
-                    603-860-1104
+                    {phone}
                   </a>
                 </li>
+                {extraContact.filter((c) => c.value?.trim()).map((item) => {
+                  const v = item.value.trim();
+                  const href = v.startsWith("http") ? v : v.includes("@") ? `mailto:${v}` : /^[\d\s\-+().]+$/.test(v) ? `tel:${v.replace(/\D/g, "")}` : v;
+                  const isLink = href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:");
+                  return (
+                    <li key={item.label}>
+                      {isLink ? (
+                        <a href={href} className="text-gray-600 hover:text-black transition-colors text-sm md:text-base">
+                          {item.label}
+                        </a>
+                      ) : (
+                        <span className="text-gray-600 text-sm md:text-base">{item.label}: {v}</span>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>

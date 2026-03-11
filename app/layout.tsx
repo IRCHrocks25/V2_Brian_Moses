@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import "./globals.css";
 import FontLoader from "@/components/FontLoader";
+import PreviewBanner from "@/components/PreviewBanner";
 
 export const metadata: Metadata = {
   title:
@@ -19,6 +21,9 @@ export default function RootLayout({
       <body className="font-inter">
         <FontLoader />
         <div className="flex min-h-screen flex-col bg-[#0a0a0a]">
+          <Suspense fallback={null}>
+            <PreviewBanner />
+          </Suspense>
           <main className="flex-1">{children}</main>
         </div>
       </body>

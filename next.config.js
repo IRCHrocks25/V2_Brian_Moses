@@ -11,6 +11,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'brianmoses.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
     ],
   },
   // Allow the Railway hostname

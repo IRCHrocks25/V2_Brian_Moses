@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import DynamicCTA from "./DynamicCTA";
 
 interface NavbarProps {
   logoPath?: string;
@@ -143,14 +144,15 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
 
           {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-3">
-            <a
-              href="https://hub.freedombuildersinnercircle.com/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 md:px-5 py-2 md:py-2.5 text-sm md:text-base font-semibold border border-white/30 text-white rounded-lg hover:bg-white/10 hover:border-white/60 transition-all duration-200"
-            >
-              Login
-            </a>
+            <DynamicCTA
+              placement="navbar"
+              page="all"
+              fallbackStyle="outline"
+              fallback={{
+                text: "Login",
+                url: "https://hub.freedombuildersinnercircle.com/login",
+              }}
+            />
           </div>
 
           {/* Mobile menu button */}
@@ -205,15 +207,17 @@ export default function Navbar({ logoPath = "/images/main logo-coaching-white.pn
             >
               Speaker
             </Link>
-            <a
-              href="https://hub.freedombuildersinnercircle.com/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block px-1 py-2 hover:text-white"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Login
-            </a>
+            <div className="px-1 py-2" onClick={() => setIsMobileMenuOpen(false)}>
+              <DynamicCTA
+                placement="navbar"
+                page="all"
+                fallbackStyle="outline"
+                fallback={{
+                  text: "Login",
+                  url: "https://hub.freedombuildersinnercircle.com/login",
+                }}
+              />
+            </div>
           </div>
         )}
       </div>

@@ -1,0 +1,79 @@
+// Prisma schema for Brian Moses CMS
+// Use DATABASE_URL env var - Railway provides PostgreSQL
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  role         String   @default("user") // "admin" | "user"
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model PasswordReset {
+  id        String   @id @default(cuid())
+  email     String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model ContentItem {
+  id        String   @id @default(cuid())
+  key       String   @unique // e.g. "hero.headline", "hero.ctaText"
+  value     String   @db.Text // JSON string for complex content
+  page      String   @default("home") // home, keynote, all
+  section   String?  // optional section label
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  header    String   @db.Text
+  body      String   @db.Text
+  author    String
+  title     String
+  image     String
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CTA {
+  id        String   @id @default(cuid())
+  text      String
+  url       String
+  style     String   @default("primary") // primary, secondary, outline
+  placement String   // hero, navbar, footer, floating, section-hero, etc.
+  page      String   @default("all") // home, keynote, attract-business, all
+  order     Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PreviewDraft {
+  id        String   @id
+  data      Json     // { content?, ctas?, testimonials? }
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model ChangeHistory {
+  id          String   @id @default(cuid())
+  action      String   // content | cta | testimonial
+  targetLabel String   // human-readable e.g. "Hero Headline"
+  changedBy   String   // user email
+  changedAt   DateTime @default(now())
+}
