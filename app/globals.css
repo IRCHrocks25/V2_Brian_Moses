@@ -7,6 +7,11 @@
   --foreground: #ffffff;
 }
 
+/* Light mode: ensure inputs and form controls are readable */
+html:not(.dark) {
+  color-scheme: light;
+}
+
 /* Dark mode: native form controls (select dropdowns, etc.) use dark styling */
 .dark,
 .dark select {
