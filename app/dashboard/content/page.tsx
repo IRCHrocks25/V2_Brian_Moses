@@ -180,7 +180,7 @@ export default function ContentPage() {
   );
 
   // Add custom keys from DB that aren't in CONTENT_KEYS
-  const knownKeys = new Set(CONTENT_KEYS.map((c) => c.key));
+  const knownKeys = new Set<string>(CONTENT_KEYS.map((c) => c.key));
   for (const key of Object.keys(content)) {
     if (!knownKeys.has(key) && content[key]) {
       const sec = "Custom";

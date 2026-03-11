@@ -5,7 +5,9 @@ import { DEFAULT_CONTENT } from "@/lib/default-content";
 import { CONTENT_KEYS } from "@/lib/content-keys";
 import { logContentChange } from "@/lib/log-change";
 
-const keyMeta = new Map(CONTENT_KEYS.map((c) => [c.key, { page: c.page, section: c.section }]));
+const keyMeta = new Map<string, { page: string; section: string }>(
+  CONTENT_KEYS.map((c) => [c.key, { page: c.page, section: c.section }])
+);
 
 export async function POST(req: Request) {
   let session;

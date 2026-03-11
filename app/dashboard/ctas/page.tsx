@@ -115,6 +115,8 @@ export default function CTAsPage() {
                 style: form.style,
                 placement: form.placement,
                 page: form.page,
+                order: ctas.length,
+                isActive: form.isActive,
               });
             }
             return { ctas: draftCtas };

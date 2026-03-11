@@ -1,7 +1,7 @@
 import { prisma } from "./db";
 import { CONTENT_KEYS } from "./content-keys";
 
-const keyToLabel = new Map(CONTENT_KEYS.map((c) => [c.key, c.label]));
+const keyToLabel = new Map<string, string>(CONTENT_KEYS.map((c) => [c.key, c.label]));
 
 export async function logContentChange(key: string, changedBy: string) {
   const label = keyToLabel.get(key) || key;
