@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+const MOBILE_BG = "/mobile_backgrounds/Frame 1707482104 (1).png";
+
 interface BrianStorySectionProps {
   imageSrc?: string;
   content?: Record<string, string>;
@@ -44,19 +46,26 @@ export default function BrianStorySection({ imageSrc = "/images/Frame 1000007768
       <section className="bg-white py-12 md:py-16">
         <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-24">
           <div className="relative overflow-hidden rounded-2xl border border-black/10 shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
-            {/* Background image */}
+            {/* Background image - mobile vs desktop */}
             <div className="absolute inset-0">
+              <Image
+                src={MOBILE_BG}
+                alt="Brian Moses speaking on stage"
+                fill
+                priority
+                className="object-cover object-center md:hidden"
+              />
               <Image
                 src={imageSrc}
                 alt="Brian Moses speaking on stage"
                 fill
                 priority
-                className="object-cover object-center"
+                className="object-cover object-center hidden md:block"
               />
             </div>
 
             {/* Content layout (match proportions in screenshot) */}
-            <div className="relative grid min-h-[800px] md:min-h-[900px] lg:min-h-[950px] grid-cols-1 lg:grid-cols-[1.5fr_0.5fr]">
+            <div className="relative grid min-h-[1500px] md:min-h-[900px] lg:min-h-[950px] grid-cols-1 lg:grid-cols-[1.5fr_0.5fr]">
               {/* Left text block */}
               <div className="pl-4 pr-4 py-8 sm:pl-8 sm:pr-6 md:pl-20 md:pr-14 md:py-16 lg:py-20 text-white">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] max-w-[1000px] whitespace-pre-line">

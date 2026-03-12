@@ -17,6 +17,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/ic-order-vsl',
+        destination: 'https://inner-circle.brianmoses.com/ic-order-vsl',
+        permanent: true, // 301 redirect
+      },
+    ];
+  },
   // Allow the Railway hostname
   async headers() {
     return [

@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+const MOBILE_BG = "/mobile_backgrounds/Frame 1707482107.png";
+
 interface KeynoteTransformationSectionProps {
   imageSrc?: string;
 }
@@ -9,12 +11,18 @@ export default function KeynoteTransformationSection({ imageSrc = "/images/Frame
     <section className="relative bg-[#0a0a0a] py-16 md:py-24 overflow-hidden">
       <div className="mx-auto w-full px-6 lg:px-12">
         {/* Background Image Section with Rounded Corners */}
-        <div className="relative min-h-[80vh] md:min-h-[90vh] rounded-lg md:rounded-3xl overflow-hidden">
+        <div className="relative min-h-[163vh] md:min-h-[90vh] rounded-lg md:rounded-3xl overflow-hidden">
+          <Image
+            src={MOBILE_BG}
+            alt="Brian Moses transformation story"
+            fill
+            className="object-cover object-right object-[70%_50%] md:hidden"
+          />
           <Image
             src={imageSrc}
             alt="Brian Moses transformation story"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center hidden md:block"
           />
           
           {/* Dark overlay for better text readability */}
@@ -22,7 +30,7 @@ export default function KeynoteTransformationSection({ imageSrc = "/images/Frame
 
           {/* Content Overlay */}
           <div className="relative z-10 h-full mx-auto w-full px-6 lg:px-12">
-            <div className="grid min-h-[80vh] md:min-h-[90vh] items-center gap-6 md:gap-10 lg:grid-cols-[2fr_1fr] pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-10 md:pb-14">
+            <div className="grid min-h-[163vh] md:min-h-[90vh] items-start md:items-center gap-6 md:gap-10 lg:grid-cols-[2fr_1fr] pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-10 md:pb-14">
               
               {/* Left Content */}
               <div className="pl-4 sm:pl-6 md:pl-12 lg:pl-16">
