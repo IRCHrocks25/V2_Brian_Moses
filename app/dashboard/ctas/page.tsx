@@ -99,9 +99,9 @@ export default function CTAsPage() {
 
   return (
     <div className="w-full max-w-7xl">
-      <div className="mb-10 flex items-center justify-between flex-wrap gap-4">
+      <div className="mb-6 md:mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-semibold text-slate-900 dark:text-white tracking-tight">CTAs</h1>
+          <h1 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white tracking-tight">CTAs</h1>
           <p className="mt-1 text-slate-500 dark:text-white/50">Add and manage call-to-action buttons across the site.</p>
         </div>
         <PreviewButton
@@ -127,7 +127,7 @@ export default function CTAsPage() {
       </div>
 
       {/* Create form */}
-      <form onSubmit={create} className="mb-10 p-8 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06] shadow-sm dark:shadow-none">
+      <form onSubmit={create} className="mb-6 md:mb-10 p-4 sm:p-6 md:p-8 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06] shadow-sm dark:shadow-none">
         <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">Add CTA</h2>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -216,32 +216,34 @@ export default function CTAsPage() {
             {ctas.map((cta) => (
               <div
                 key={cta.id}
-                className="flex items-center justify-between p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06] hover:border-slate-300 dark:hover:border-white/[0.1] transition-colors shadow-sm dark:shadow-none"
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 p-4 sm:p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06] hover:border-slate-300 dark:hover:border-white/[0.1] transition-colors shadow-sm dark:shadow-none"
               >
                 {editing === cta.id ? (
-                  <div className="flex-1 flex flex-wrap gap-3 items-center">
+                  <div className="flex-1 flex flex-col sm:flex-row sm:flex-wrap gap-3 items-stretch sm:items-center w-full">
                     <input
                       defaultValue={cta.text}
                       onBlur={(e) => update(cta.id, { text: e.target.value })}
-                      className="px-3 py-2 rounded-xl bg-white dark:bg-white/[0.04] border-2 border-slate-300 dark:border-white/[0.08] text-slate-900 dark:text-white w-40 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                      className="px-3 py-2.5 rounded-xl bg-white dark:bg-white/[0.04] border-2 border-slate-300 dark:border-white/[0.08] text-slate-900 dark:text-white w-full sm:w-40 focus:outline-none focus:ring-2 focus:ring-blue-500/50 min-h-[44px]"
                     />
                     <input
                       defaultValue={cta.url}
                       onBlur={(e) => update(cta.id, { url: e.target.value })}
-                      className="px-3 py-2 rounded-xl bg-white dark:bg-white/[0.04] border-2 border-slate-300 dark:border-white/[0.08] text-slate-900 dark:text-white flex-1 min-w-[200px] focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                      className="px-3 py-2.5 rounded-xl bg-white dark:bg-white/[0.04] border-2 border-slate-300 dark:border-white/[0.08] text-slate-900 dark:text-white flex-1 min-w-0 min-h-[44px] focus:outline-none focus:ring-2 focus:ring-blue-500/50"
                     />
-                    <DashboardSelect
-                      value={cta.placement}
-                      onChange={(v) => update(cta.id, { placement: v })}
-                      options={PLACEMENTS}
-                      className="min-w-[120px]"
-                    />
-                    <DashboardSelect
-                      value={cta.page}
-                      onChange={(v) => update(cta.id, { page: v })}
-                      options={PAGES}
-                      className="min-w-[120px]"
-                    />
+                    <div className="flex flex-wrap gap-2">
+                      <DashboardSelect
+                        value={cta.placement}
+                        onChange={(v) => update(cta.id, { placement: v })}
+                        options={PLACEMENTS}
+                        className="flex-1 min-w-[120px] min-h-[44px]"
+                      />
+                      <DashboardSelect
+                        value={cta.page}
+                        onChange={(v) => update(cta.id, { page: v })}
+                        options={PAGES}
+                        className="flex-1 min-w-[120px] min-h-[44px]"
+                      />
+                    </div>
                     <label className="flex items-center gap-2 text-slate-600 dark:text-white/70">
                       <input
                         type="checkbox"
@@ -261,12 +263,12 @@ export default function CTAsPage() {
                 ) : (
                   <div className="flex-1 min-w-0">
                     <span className="text-slate-900 dark:text-white font-medium">{cta.text}</span>
-                    <span className="text-slate-400 dark:text-white/40 mx-2">→</span>
-                    <span className="text-slate-600 dark:text-white/60 truncate">{cta.url}</span>
-                    <span className="ml-2 text-xs text-slate-400 dark:text-white/40">({cta.placement} / {cta.page})</span>
+                    <span className="text-slate-400 dark:text-white/40 mx-2 hidden sm:inline">→</span>
+                    <span className="text-slate-600 dark:text-white/60 truncate block sm:inline">{cta.url}</span>
+                    <span className="text-xs text-slate-400 dark:text-white/40 block sm:inline sm:ml-2">({cta.placement} / {cta.page})</span>
                   </div>
                 )}
-                <div className="flex gap-2 ml-4">
+                <div className="flex gap-2 sm:ml-4 shrink-0">
                   <button
                     onClick={() => setEditing(editing === cta.id ? null : cta.id)}
                     className="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-white/70 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.08] transition-all"

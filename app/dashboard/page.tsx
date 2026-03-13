@@ -11,7 +11,7 @@ export default async function DashboardPage() {
   return (
     <div className="w-full max-w-none">
       {/* Greeting & Header */}
-      <div className="mb-10 pl-6 border-l-4 border-emerald-500/60 dark:border-emerald-400/50">
+      <div className="mb-8 md:mb-10 pl-4 md:pl-6 border-l-4 border-emerald-500/60 dark:border-emerald-400/50">
         <DashboardGreeting name={name} />
         <h1 className="mt-4 text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">Dashboard</h1>
         <p className="mt-2 text-slate-600 dark:text-slate-400 text-base">Manage your website content, images, CTAs, and testimonials.</p>

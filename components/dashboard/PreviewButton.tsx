@@ -57,8 +57,8 @@ export default function PreviewButton({
       type="button"
       onClick={handlePreview}
       disabled={loading}
-      className={`flex items-center gap-1.5 rounded-xl bg-amber-500/20 text-amber-400 hover:bg-amber-500/30 border border-amber-500/30 transition-all font-medium disabled:opacity-50 ${
-        compact ? "px-3 py-1.5 text-sm rounded-lg" : "px-4 py-2.5 gap-2"
+      className={`flex items-center justify-center gap-1.5 rounded-xl bg-amber-500/20 text-amber-400 hover:bg-amber-500/30 border border-amber-500/30 transition-all font-medium disabled:opacity-50 min-h-[44px] ${
+        compact ? "px-3 py-2 text-sm rounded-lg min-h-[36px]" : "px-4 py-2.5 gap-2"
       }`}
     >
       {icon}

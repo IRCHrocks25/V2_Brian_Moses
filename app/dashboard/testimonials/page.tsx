@@ -274,12 +274,12 @@ export default function TestimonialsPage() {
         className="hidden"
         onChange={handleFileSelect}
       />
-      <div className="mb-10 flex items-center justify-between flex-wrap gap-4">
+      <div className="mb-6 md:mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-semibold text-slate-900 dark:text-white tracking-tight">Testimonials</h1>
+          <h1 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white tracking-tight">Testimonials</h1>
           <p className="mt-1 text-slate-500 dark:text-white/50">Edit testimonials — image, quote, author, and title. Add, Edit, Delete, Save.</p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <PreviewButton
             getDraftData={async () => {
               let draft = list.map((t) => ({
@@ -321,7 +321,7 @@ export default function TestimonialsPage() {
       </div>
 
       {showAddForm && (
-        <form onSubmit={addNew} className="mb-8 p-6 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-emerald-500/20 shadow-sm dark:shadow-none">
+        <form onSubmit={addNew} className="mb-6 md:mb-8 p-4 sm:p-6 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-emerald-500/20 shadow-sm dark:shadow-none">
           <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Add new testimonial</h3>
           <div className="grid gap-4 md:grid-cols-2">
             <div>
@@ -411,7 +411,7 @@ export default function TestimonialsPage() {
       )}
 
       {orderDirty && (
-        <div className="mb-6 p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between flex-wrap gap-3">
+        <div className="mb-4 md:mb-6 p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="text-amber-700 dark:text-amber-400/90 text-sm font-medium">
             Order changed. Save or discard your changes?
           </p>
@@ -438,31 +438,33 @@ export default function TestimonialsPage() {
           <div
             key={t.id}
             ref={(el) => { cardRefs.current.set(index, el); }}
-            className={`p-6 rounded-2xl bg-white dark:bg-white/[0.03] border flex gap-6 shadow-sm dark:shadow-none transition-all ${
+            className={`p-4 sm:p-6 rounded-2xl bg-white dark:bg-white/[0.03] border flex flex-col sm:flex-row gap-4 sm:gap-6 shadow-sm dark:shadow-none transition-all ${
               draggedIndex === index ? "opacity-50 scale-[0.98]" : ""
             } ${dragOverIndex === index ? "border-emerald-500/50 ring-2 ring-emerald-500/20" : "border-slate-200 dark:border-white/[0.06]"}`}
             onDragOver={(e) => testimonials.length > 1 && !t.id.startsWith("default") && handleDragOver(e, index)}
             onDragLeave={handleDragLeave}
             onDrop={(e) => testimonials.length > 1 && !t.id.startsWith("default") && handleDrop(e, index)}
           >
-            {testimonials.length > 1 && !t.id.startsWith("default") && (
-              <div
-                draggable
-                onDragStart={(e) => handleDragStart(e, index)}
-                onDrag={handleDrag}
-                onDragEnd={handleDragEnd}
-                className="flex cursor-grab active:cursor-grabbing touch-none select-none p-2 -ml-2 rounded-lg text-slate-400 dark:text-white/40 hover:text-slate-600 dark:hover:text-white/70 hover:bg-slate-100 dark:hover:bg-white/10 justify-center items-center transition-colors"
-                title="Drag to reorder"
-              >
-                <Icons.GripVertical />
-              </div>
-            )}
-            <div className="w-32 h-32 rounded-xl overflow-hidden bg-slate-100 dark:bg-white/5 flex-shrink-0">
+            <div className="flex sm:flex-col items-center sm:items-stretch gap-2 sm:gap-0 order-first sm:order-none">
+              {testimonials.length > 1 && !t.id.startsWith("default") && (
+                <div
+                  draggable
+                  onDragStart={(e) => handleDragStart(e, index)}
+                  onDrag={handleDrag}
+                  onDragEnd={handleDragEnd}
+                  className="flex cursor-grab active:cursor-grabbing touch-none select-none p-2.5 sm:p-2 rounded-lg text-slate-400 dark:text-white/40 hover:text-slate-600 dark:hover:text-white/70 hover:bg-slate-100 dark:hover:bg-white/10 justify-center items-center transition-colors min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0"
+                  title="Drag to reorder"
+                >
+                  <Icons.GripVertical />
+                </div>
+              )}
+              <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden bg-slate-100 dark:bg-white/5 flex-shrink-0">
               {(t.image?.startsWith("/") || t.image?.startsWith("http")) ? (
                 <img src={t.image} alt={t.author} className="w-full h-full object-cover" />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-slate-400 dark:text-white/40 text-xs">No image</div>
               )}
+              </div>
             </div>
             <div className="flex-1 min-w-0">
               {editing === t.id ? (

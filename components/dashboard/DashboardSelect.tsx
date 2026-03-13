@@ -27,7 +27,7 @@ export default function DashboardSelect({ value, onChange, options, className = 
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-2 px-4 py-3 rounded-xl bg-white dark:bg-white/[0.04] border-2 border-slate-300 dark:border-white/[0.08] text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all text-left"
+        className="w-full flex items-center justify-between gap-2 px-4 py-3 min-h-[44px] rounded-xl bg-white dark:bg-white/[0.04] border-2 border-slate-300 dark:border-white/[0.08] text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all text-left"
       >
         <span>{value || placeholder || "Select..."}</span>
         <svg className="w-4 h-4 shrink-0 text-slate-400 dark:text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,7 +45,7 @@ export default function DashboardSelect({ value, onChange, options, className = 
                 onChange(opt);
                 setOpen(false);
               }}
-              className={`w-full px-4 py-2.5 text-left text-sm font-medium transition-colors
+              className={`w-full px-4 py-3 min-h-[44px] flex items-center text-left text-sm font-medium transition-colors
                 ${opt === value
                   ? "bg-emerald-500/20 text-emerald-400 dark:bg-emerald-500/20 dark:text-emerald-400"
                   : "text-slate-700 dark:text-white/90 hover:bg-slate-100 dark:hover:bg-white/[0.08] hover:text-slate-900 dark:hover:text-white"

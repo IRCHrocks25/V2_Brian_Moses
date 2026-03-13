@@ -44,8 +44,10 @@ export default function TypicalOutcomesSection({ bgImage = "/background.png", br
 
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
+      {/* Mobile: solid dark black background */}
+      <div className="absolute inset-0 bg-black md:hidden" />
+      {/* Desktop: Background Image */}
+      <div className="absolute inset-0 hidden md:block">
         <Image
           src={bgImage}
           alt="Background"

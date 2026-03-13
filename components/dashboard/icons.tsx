@@ -120,6 +120,19 @@ export const Icons = {
       <path d="M6 9l6 6 6-6" />
     </svg>
   ),
+  Menu: () => (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 6h16" />
+      <path d="M4 12h16" />
+      <path d="M4 18h16" />
+    </svg>
+  ),
+  X: () => (
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 6L6 18" />
+      <path d="M6 6l12 12" />
+    </svg>
+  ),
   GripVertical: () => (
     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
       <circle cx="9" cy="6" r="1.5" />

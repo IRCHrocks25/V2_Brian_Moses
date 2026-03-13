@@ -194,9 +194,9 @@ export default function ContentPage() {
 
   return (
     <div className="w-full max-w-7xl">
-      <div className="mb-10 flex items-center justify-between flex-wrap gap-4">
+      <div className="mb-6 md:mb-10 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-semibold text-slate-900 dark:text-white tracking-tight">Content</h1>
+          <h1 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white tracking-tight">Content</h1>
           <p className="mt-1 text-slate-500 dark:text-white/50">Edit copy and images. Each item has Edit, Delete, and you can Add new.</p>
         </div>
         <div className="flex items-center gap-3 flex-wrap">
@@ -223,7 +223,7 @@ export default function ContentPage() {
 
       {/* Add new form */}
       {showAddForm && (
-        <form onSubmit={addNew} className="mb-8 p-6 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-emerald-500/20">
+        <form onSubmit={addNew} className="mb-6 md:mb-8 p-4 sm:p-6 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-emerald-500/20">
           <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Add custom content</h3>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             <div>

@@ -19,7 +19,7 @@ export default function Toast({ message, onClose, duration = 3000, variant = "su
   const isError = variant === "error";
   return (
     <div
-      className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-3 rounded-xl font-medium shadow-lg transition-all ${
+      className={`fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 z-50 flex items-center gap-3 px-5 py-3 rounded-xl font-medium shadow-lg transition-all max-w-full ${
         isError
           ? "bg-rose-500/95 text-white shadow-rose-500/25"
           : "bg-emerald-500/95 text-white shadow-emerald-500/25"

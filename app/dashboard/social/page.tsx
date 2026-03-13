@@ -140,9 +140,9 @@ export default function SocialPage() {
 
   return (
     <div className="w-full max-w-7xl">
-      <div className="mb-10 flex items-center justify-between flex-wrap gap-4">
+      <div className="mb-6 md:mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-semibold text-slate-900 dark:text-white tracking-tight">Social & Contact</h1>
+          <h1 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white tracking-tight">Social & Contact</h1>
           <p className="mt-1 text-slate-500 dark:text-white/50">
             Update your social media links and contact info. These appear in the site footer.
           </p>
@@ -164,7 +164,7 @@ export default function SocialPage() {
       </div>
 
       {showAddForm && (
-        <form onSubmit={addNew} className="mb-6 p-6 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-emerald-500/20">
+        <form onSubmit={addNew} className="mb-6 p-4 sm:p-6 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-emerald-500/20">
           <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Add new link</h3>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <div>
@@ -224,7 +224,7 @@ export default function SocialPage() {
         </form>
       )}
 
-      <div className="p-6 md:p-8 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06] shadow-sm dark:shadow-none">
+      <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06] shadow-sm dark:shadow-none">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SOCIAL_KEYS.map(({ key, label, placeholder }) => (
             <div key={key}>
