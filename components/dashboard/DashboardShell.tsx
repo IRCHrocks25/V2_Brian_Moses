@@ -56,15 +56,17 @@ export default function DashboardShell({
         <div className="absolute top-1/2 -left-40 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl" />
       </div>
 
-      {/* Mobile menu button */}
-      <button
-        type="button"
-        onClick={() => setSidebarOpen(true)}
-        className="md:hidden fixed top-4 left-4 z-50 p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-white dark:bg-white/[0.08] border border-slate-200 dark:border-white/10 shadow-lg text-slate-600 dark:text-white/80 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
-        aria-label="Open menu"
-      >
-        <Icons.Menu />
-      </button>
+      {/* Mobile menu button - right side, hidden when sidebar open */}
+      {!sidebarOpen && (
+        <button
+          type="button"
+          onClick={() => setSidebarOpen(true)}
+          className="md:hidden fixed top-4 right-4 z-50 p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-white dark:bg-white/[0.08] border border-slate-200 dark:border-white/10 shadow-lg text-slate-600 dark:text-white/80 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
+          aria-label="Open menu"
+        >
+          <Icons.Menu />
+        </button>
+      )}
 
       {/* Mobile overlay */}
       {sidebarOpen && (
@@ -75,10 +77,10 @@ export default function DashboardShell({
         />
       )}
 
-      {/* Sidebar - hidden on mobile unless open, always visible on md+ */}
+      {/* Sidebar - slides from right on mobile, fixed left on md+ */}
       <aside
-        className={`fixed left-0 top-0 h-full w-72 max-w-[85vw] flex flex-col z-40 transition-transform duration-300 ease-out md:translate-x-0 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+        className={`fixed right-0 top-0 h-full w-72 max-w-[85vw] flex flex-col z-40 transition-transform duration-300 ease-out md:left-0 md:right-auto ${
+          sidebarOpen ? "translate-x-0" : "translate-x-full md:translate-x-0"
         }`}
       >
         <div className="flex-1 m-2 md:m-4 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06] backdrop-blur-xl shadow-xl dark:shadow-2xl dark:shadow-black/20 overflow-hidden transition-colors duration-300 flex flex-col">
@@ -101,8 +103,8 @@ export default function DashboardShell({
               <Icons.X />
             </button>
           </div>
-          <div className="px-4 md:px-6 pb-2">
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-100 dark:bg-white/[0.04]">
+          <div className="px-4 md:px-6 pb-2 pt-4">
+            <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-slate-100 dark:bg-white/[0.04] mb-4">
               <div className="w-2 h-2 flex-shrink-0 rounded-full bg-emerald-500 animate-pulse" />
               <span className="text-xs text-slate-600 dark:text-white/50 truncate">{session.email}</span>
             </div>
