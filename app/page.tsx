@@ -46,7 +46,7 @@ export default async function Home({
   return (
     <>
       {/* Navbar */}
-      <Navbar logoPath={content["img.navbar.home"] || "/images/main logo-coaching-white.png"} />
+      <Navbar logoPath={content["img.navbar.home"] || "/images/main-logo-coaching-white.png"} />
 
       {/* HERO SECTION */}
       <section id="home" className="relative bg-[#0a0a0a] py-8 md:py-12">

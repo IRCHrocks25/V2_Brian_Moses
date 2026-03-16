@@ -15,7 +15,7 @@ export const DEFAULT_CONTENT: Record<string, string> = {
   "img.brianStory": "/images/Frame 1000007768.png",
   "img.attractDontChase.plus": "/images/plus_icon.png",
   "img.attractDontChase.people": "/images/people_icon.png",
-  "img.navbar.home": "/images/main logo-coaching-white.png",
+  "img.navbar.home": "/images/main-logo-coaching-white.png",
   "img.footer.home": "/images/brian_moses_footer_logo.png",
   "img.navbar.keynote": "/images/speakerpage_logo/main logo-speaker-white.png",
   "img.footer.keynote": "/images/speakerpage_logo/main logo-speaker-dark.png",
