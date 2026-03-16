@@ -216,7 +216,7 @@ export default function Footer({
               >
                 Privacy
               </a>
-              <span>|</span>
+              <span>||</span>
               <a
                 href="#earnings"
                 className="hover:text-black transition-colors"
