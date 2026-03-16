@@ -10,7 +10,7 @@ interface NavbarProps {
   logoPath?: string;
 }
 
-export default function Navbar({ logoPath = "/images/main-logo-coaching-white.png" }: NavbarProps) {
+export default function Navbar({ logoPath = "https://res.cloudinary.com/dcuswyfur/image/upload/v1773699155/main-logo-coaching-white_xafq2t.png" }: NavbarProps) {
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
