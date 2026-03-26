@@ -17,10 +17,10 @@ export default function AboutBeginning({
     "It was in this moment of total depletion that Brian made a radical decision. He wasn't just going to \"try harder\"—he was going to change the rules entirely. He realized that the only way out of the project was to build a podium of his own making.",
   ],
   quote = "The world gave me every reason to quit. I decided that was exactly the reason to keep going.",
-  imageSrc = "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
+  imageSrc = "/images/Keynote.png",
 }: AboutBeginningProps) {
   return (
-    <section className="w-full flex flex-col lg:flex-row justify-center items-center py-16 md:py-32 px-6 lg:px-[120px] gap-12 lg:gap-[76px] mt-12 md:mt-24 max-w-7xl mx-auto">
+    <section className="w-full flex flex-col lg:flex-row justify-center items-center py-16 md:py-32 px-6 lg:px-8 gap-12 lg:gap-[76px] mt-12 md:mt-24 max-w-[1440px] mx-auto">
       {/* Image Column */}
       <div className="relative rounded-[24px] overflow-hidden shadow-2xl w-full lg:w-[621px] h-[500px] md:h-[771px] bg-white flex-shrink-0">
         <Image

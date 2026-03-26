@@ -16,10 +16,10 @@ const stats = [
 export default function AboutHero({
   headline = "From the Projects\nto the Podium.",
   subheadline = "Brian Moses didn't inherit success. He clawed it out of poverty, debt, depression, and every reason the world gave him to quit. This is his story and yours starts here.",
-  backgroundImage = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop",
+  backgroundImage = "/images/image (32) 1.png",
 }: AboutHeroProps) {
   return (
-    <section className="relative w-full max-w-[1400px] rounded-[20px] overflow-hidden shadow-2xl bg-black mx-auto mt-12 md:mt-24">
+    <section className="relative w-full max-w-[1791px] rounded-[20px] overflow-hidden bg-[#010711] mx-auto mt-12 md:mt-8 px-4 sm:px-6 lg:px-8">
       {/* Background Images & Overlays */}
       <div className="absolute inset-0">
         <Image
@@ -27,26 +27,26 @@ export default function AboutHero({
           alt="Audience Background"
           fill
           priority
-          className="object-cover grayscale opacity-50"
+          className="object-cover grayscale"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90"></div>
+
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Content Wrapper */}
-      <div className="relative z-10 px-6 py-24 md:py-[150px] flex flex-col items-center text-center">
+      <div className="relative z-10 py-24 md:py-[150px] flex flex-col items-center text-center">
         {/* Headline */}
-        <h1 className="text-5xl md:text-[96px] font-medium text-white tracking-[-0.04em] leading-[1.1] md:leading-[96px] mb-6 max-w-[1000px] whitespace-pre-line">
+        <h1 className="text-5xl md:text-[96px] font-medium text-white tracking-[-0.04em] leading-[1.1] md:leading-[96px] mb-[22px] max-w-[1000px] whitespace-pre-line">
           {headline}
         </h1>
 
         {/* Subheadline */}
-        <p className="text-[#CBD5E1] text-lg md:text-[24px] font-medium leading-relaxed md:leading-[32px] max-w-[1000px] mb-16 md:mb-[100px] px-4">
+        <p className="text-[#CBD5E1] text-lg md:text-[24px] font-medium leading-relaxed md:leading-[32px] max-w-[1000px] mb-16 md:mb-[96px]">
           {subheadline}
         </p>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-4 md:gap-[35px] w-full max-w-[1300px] mx-auto px-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-4 md:gap-[35px] w-full max-w-[1300px] mx-auto">
           {stats.map((stat, index) => (
             <div
               key={index}

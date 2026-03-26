@@ -23,13 +23,10 @@ export default function AboutTimeline({
   ],
 }: AboutTimelineProps) {
   return (
-    <section className="relative w-full max-w-[1280px] mx-auto overflow-hidden py-16 md:py-32 px-4 md:px-8 flex flex-col gap-20">
-      {/* Radial Glow */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[150%] md:w-[2077px] h-[713px] bg-[#03329F] blur-[200px] pointer-events-none opacity-60"></div>
+    <section className="relative w-full overflow-hidden py-16 md:py-32 px-4 md:px-8 flex flex-col gap-20">
+      <div className="absolute top-[-610px] left-1/2 transform -translate-x-1/2 w-[2077px] max-w-none h-[714px] bg-[#03329F] rounded-[100%] blur-[200px] pointer-events-none"></div>
 
-      {/* Header */}
-      <div className="relative z-10 flex flex-col items-center gap-4 w-full max-w-[1216px] mx-auto">
-        {/* Tagline */}
+      <div className="relative z-10 flex flex-col items-center gap-4 w-full max-w-[1300px] mx-auto">
         <div className="flex items-center gap-[10px]">
           <div className="relative w-4 h-2.5">
             <div className="absolute left-0 top-0.5 w-2.5 h-2.5 rounded-full bg-[#AADBFF]"></div>
@@ -39,17 +36,13 @@ export default function AboutTimeline({
             {tagline}
           </span>
         </div>
-        {/* Heading */}
         <h2 className="text-4xl md:text-[64px] font-medium text-white leading-[1.1] md:leading-[60px] tracking-tight text-center w-full">
           {heading}
         </h2>
       </div>
 
-      {/* Timeline Container */}
       <div className="relative z-10 w-full max-w-[1216px] mx-auto">
-        {/* Vertical Center Line (Desktop) */}
         <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-[1px] h-full bg-[rgba(161,161,161,0.3)]"></div>
-        {/* Vertical Left Line (Mobile) */}
         <div className="md:hidden absolute left-4 w-[1px] h-full bg-[rgba(161,161,161,0.3)]"></div>
 
         <div className="flex flex-col gap-10 md:gap-16">
@@ -58,33 +51,25 @@ export default function AboutTimeline({
             return (
               <div
                 key={index}
-                className={`relative flex md:justify-between items-center w-full min-h-[92px] ${
-                  isEven ? "md:flex-row-reverse" : ""
-                }`}
+                className={`relative flex md:justify-between items-center w-full min-h-[92px] ${isEven ? "md:flex-row-reverse" : ""
+                  }`}
               >
-                {/* Dot */}
                 <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#1568F7] rounded-full shadow-[0_0_15px_rgba(0,112,243,0.8)] z-10"></div>
-                
-                {/* Content */}
+
                 <div
-                  className={`w-full md:w-[600px] pl-10 md:pl-0 ${
-                    isEven ? "md:pl-16" : "md:pr-16"
-                  } flex flex-col items-start ${
-                    !isEven ? "md:items-end" : ""
-                  } gap-2`}
+                  className={`w-full md:w-[600px] pl-10 md:pl-0 ${isEven ? "md:pl-16" : "md:pr-16"
+                    } flex flex-col items-start ${!isEven ? "md:items-end" : ""
+                    } gap-2`}
                 >
-                  <h3 className={`text-2xl md:text-3xl font-medium text-[#1568F7] leading-7 ${
-                    !isEven ? "md:text-right" : ""
-                  }`}>
+                  <h3 className={`text-2xl md:text-3xl font-medium text-[#1568F7] leading-7 ${!isEven ? "md:text-right" : ""
+                    }`}>
                     {item.title}
                   </h3>
-                  <p className={`text-[#CFCFCF] text-lg md:text-2xl font-medium leading-7 ${
-                    !isEven ? "md:text-right" : ""
-                  } max-w-[536px]`}>
+                  <p className={`text-[#CFCFCF] text-lg md:text-2xl font-medium leading-7 ${!isEven ? "md:text-right" : ""
+                    } max-w-[536px]`}>
                     {item.description}
                   </p>
                 </div>
-                {/* Spacer for desktop */}
                 <div className="hidden md:block w-[600px]"></div>
               </div>
             );

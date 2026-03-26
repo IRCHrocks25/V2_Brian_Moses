@@ -21,7 +21,7 @@ export default function AboutTurningPoint({
   ],
 }: AboutTurningPointProps) {
   return (
-    <section className="w-full flex flex-col lg:flex-row justify-center items-center py-16 md:py-24 px-6 lg:px-[120px] gap-12 lg:gap-[60px] border-y border-[rgba(65,71,84,0.1)] max-w-7xl mx-auto">
+    <section className="w-full flex flex-col lg:flex-row justify-center items-center py-16 md:py-24 px-6 lg:px-8 gap-12 lg:gap-[60px] border-y border-[rgba(65,71,84,0.1)] max-w-[1440px] mx-auto">
       {/* Text Content Column */}
       <div className="flex flex-col items-start w-full lg:w-[717px] gap-6 md:gap-[25px]">
         {/* Tagline */}
@@ -60,10 +60,23 @@ export default function AboutTurningPoint({
             key={index}
             className="flex items-center bg-[#F5F5F5] rounded-[60px] py-5 px-5 gap-5"
           >
-            <div className="relative w-[22px] h-[22px] flex-shrink-0">
+            <div className="relative w-[22px] h-[22px] flex-shrink-0 flex items-center justify-center">
               <div className="absolute inset-0 bg-[#1568F7] rounded-full"></div>
-              {/* Checkmark representation */}
-              <div className="absolute left-[6.5px] top-[8px] w-[10px] h-[8px] border-b-[1.5px] border-r-[1.5px] border-[#AADBFF] transform rotate-45 -translate-y-1"></div>
+              {/* Exact SVG Vector Matching Figma */}
+              <svg
+                className="relative z-10 w-[10px] h-[8px]"
+                viewBox="0 0 10 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 4L3.5 6.5L9 1"
+                  stroke="#AADBFF"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
             <span className="text-black font-semibold text-lg md:text-2xl leading-6 tracking-tight">
               {pillar}

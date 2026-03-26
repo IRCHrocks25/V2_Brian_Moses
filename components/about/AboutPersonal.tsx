@@ -16,10 +16,10 @@ export default function AboutPersonal({
     "Today, Brian lives a life that his 28-year-old self wouldn't recognize, but his core mission remains rooted in that basement apartment: proving to anyone who feels stuck that the \"projects\" are just a starting line, not a destination.",
   ],
   quote = "You are always closer than you think. The only question is whether you'll be there to receive it.",
-  imageSrc = "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=2070&auto=format&fit=crop",
+  imageSrc = "/Images/HS Biz Planning 014 1 (1).png",
 }: AboutPersonalProps) {
   return (
-    <section className="w-full flex flex-col lg:flex-row justify-center items-center py-16 md:py-24 px-6 md:px-[120px] gap-12 lg:gap-20 max-w-7xl mx-auto">
+    <section className="w-full flex flex-col lg:flex-row justify-center items-center py-16 md:py-24 px-6 lg:px-8 gap-12 lg:gap-20 max-w-[1440px] mx-auto">
       {/* Text Content Column */}
       <div className="flex flex-col items-start w-full lg:w-[595px]">
         {/* Tagline */}
