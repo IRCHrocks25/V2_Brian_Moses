@@ -34,7 +34,7 @@ export default function AboutBeginning({
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-[1421px] h-[659px] bg-[#03329F] blur-[200px] pointer-events-none opacity-50"></div>
 
         {/* Quote Overlay */}
-        <div className="absolute bottom-10 md:bottom-20 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[566px] bg-black/40 backdrop-blur-sm p-4 md:py-2 md:pl-8 border-l-4 border-[#0070F3]">
+        <div className="absolute bottom-10 md:bottom-20 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[566px] bg-black/5 backdrop-blur-sm p-4 md:py-2 md:pl-8 border-l-4 border-[#0070F3]">
           <p className="text-white text-xl md:text-3xl font-semibold leading-snug md:leading-[38px] tracking-tight">
             &ldquo;{quote}&rdquo;
           </p>
