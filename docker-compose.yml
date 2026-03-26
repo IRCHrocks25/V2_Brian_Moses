@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: brian-moses-v2-db
+    restart: always
+    environment:
+      POSTGRES_USER: devuser
+      POSTGRES_PASSWORD: devpassword
+      POSTGRES_DB: brianmoses_dev
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
