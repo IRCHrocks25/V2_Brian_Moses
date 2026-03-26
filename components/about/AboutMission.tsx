@@ -22,10 +22,10 @@ export default function AboutMission({
           src={backgroundImage}
           alt="Brian on Stage"
           fill
-          className="object-cover grayscale opacity-20"
+          className="object-cover opacity-45"
         />
       </div>
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-black/10"></div>
 
       {/* Content Container */}
       <div className="relative z-10 flex flex-col items-center gap-4 px-4 md:px-8 w-full max-w-[1278px]">

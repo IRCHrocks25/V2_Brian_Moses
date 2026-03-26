@@ -79,7 +79,7 @@ export default function Navbar({ logoPath = "https://res.cloudinary.com/dcuswyfu
               Services
             </Link>
             <Link 
-              href={isKeynotePage ? "/keynote#about" : "/#about"} 
+              href={isKeynotePage ? "/keynote#about" : "/about"} 
               className="hover:text-white transition-colors scroll-smooth"
             >
               About
@@ -192,7 +192,7 @@ export default function Navbar({ logoPath = "https://res.cloudinary.com/dcuswyfu
               Services
             </Link>
             <Link
-              href={isKeynotePage ? "/keynote#about" : "/#about"}
+              href={isKeynotePage ? "/keynote#about" : "/about"}
               className="block px-1 py-2 hover:text-white"
               onClick={() => setIsMobileMenuOpen(false)}
             >
