@@ -145,6 +145,11 @@ export const DEFAULT_CONTENT: Record<string, string> = {
   "workless.desc": "You don't need to work harder to live a fullfilled life. You need a better system. If you're ready for more clarity, more income, and more freedom, your journey starts here.",
   "workless.buttonText": "Book a Free Discovery Call",
   "workless.buttonUrl": "https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone",
+  // About page
+  "about.hero.headline": "From the Projects\nto the Podium.",
+  "about.hero.subheadline": "Brian Moses didn't inherit success. He clawed it out of poverty, debt, depression, and every reason the world gave him to quit. This is his story and yours starts here.",
+  "about.beginning.tagline": "The Beginning",
+  "about.beginning.heading": "Abandoned.\nBut not broken.",
 };
 
 export function getDefault(key: string): string {

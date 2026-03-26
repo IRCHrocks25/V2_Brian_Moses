@@ -201,9 +201,9 @@ export default function ContentPage() {
         </div>
         <div className="flex items-center gap-3 flex-wrap">
           <DashboardSelect
-            value={previewPage === "/" ? "Home" : previewPage === "/keynote" ? "Keynote" : "Attract Business"}
-            onChange={(v) => setPreviewPage(v === "Home" ? "/" : v === "Keynote" ? "/keynote" : "/attract-business")}
-            options={["Home", "Keynote", "Attract Business"]}
+            value={previewPage === "/" ? "Home" : previewPage === "/keynote" ? "Keynote" : previewPage === "/about" ? "About" : "Attract Business"}
+            onChange={(v) => setPreviewPage(v === "Home" ? "/" : v === "Keynote" ? "/keynote" : v === "About" ? "/about" : "/attract-business")}
+            options={["Home", "Keynote", "About", "Attract Business"]}
             className="w-36"
           />
           <PreviewButton

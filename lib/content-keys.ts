@@ -166,4 +166,9 @@ export const CONTENT_KEYS = [
   { key: "social.youtube", label: "YouTube URL", page: "all", section: "Social" },
   { key: "contact.email", label: "Contact Email", page: "all", section: "Social" },
   { key: "contact.phone", label: "Contact Phone", page: "all", section: "Social" },
+  // About page
+  { key: "about.hero.headline", label: "About Hero Headline", page: "about", section: "Hero" },
+  { key: "about.hero.subheadline", label: "About Hero Subheadline", page: "about", section: "Hero" },
+  { key: "about.beginning.tagline", label: "Beginning Tagline", page: "about", section: "Beginning" },
+  { key: "about.beginning.heading", label: "Beginning Heading", page: "about", section: "Beginning" },
 ] as const;
