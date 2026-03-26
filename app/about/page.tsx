@@ -25,15 +25,21 @@ export default async function AboutPage({
         <AboutHero 
           headline={content["about.hero.headline"]}
           subheadline={content["about.hero.subheadline"]}
+          backgroundImage={content["img.about.hero"] || "/images/image (32) 1.png"}
         />
         <AboutBeginning 
           tagline={content["about.beginning.tagline"]}
           heading={content["about.beginning.heading"]}
+          imageSrc={content["img.about.beginning"] || "/images/five_images/Keynote.png"}
         />
         <AboutTurningPoint />
         <AboutTimeline />
-        <AboutPersonal />
-        <AboutMission />
+        <AboutPersonal 
+          imageSrc={content["img.about.personal"] || "/images/HS Biz Planning 014 1 (1).png"}
+        />
+        <AboutMission 
+          backgroundImage={content["img.about.mission"] || "/images/new_images/brian16.png"}
+        />
         <AboutCTA />
       </main>
 
