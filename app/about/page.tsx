@@ -20,30 +20,30 @@ export default async function AboutPage({
   return (
     <div className="bg-[#010711] min-h-screen text-[#CFCFCF] font-inter overflow-x-hidden">
       <Navbar logoPath={content["img.navbar.home"] || "https://res.cloudinary.com/dcuswyfur/image/upload/v1773699155/main-logo-coaching-white_xafq2t.png"} />
-      
+
       <main>
-        <AboutHero 
+        <AboutHero
           headline={content["about.hero.headline"]}
           subheadline={content["about.hero.subheadline"]}
-          backgroundImage={content["img.about.hero"] || "/images/image (32) 1.png"}
+          backgroundImage={content["img.about.hero"] || "/hero_landing.png"}
         />
-        <AboutBeginning 
+        <AboutBeginning
           tagline={content["about.beginning.tagline"]}
           heading={content["about.beginning.heading"]}
           imageSrc={content["img.about.beginning"] || "/images/five_images/Keynote.png"}
         />
         <AboutTurningPoint />
         <AboutTimeline />
-        <AboutPersonal 
+        <AboutPersonal
           imageSrc={content["img.about.personal"] || "/images/HS Biz Planning 014 1 (1).png"}
         />
-        <AboutMission 
+        <AboutMission
           backgroundImage={content["img.about.mission"] || "/images/new_images/brian16.png"}
         />
         <AboutCTA />
       </main>
 
-      <Footer 
+      <Footer
         logoPath={content["img.footer.home"] || "/images/brian_moses_footer_logo.png"}
         social={{
           facebook: content["social.facebook"],
