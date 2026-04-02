@@ -12,6 +12,7 @@ interface NavbarProps {
 
 export default function Navbar({ logoPath = "https://res.cloudinary.com/dcuswyfur/image/upload/v1773699155/main-logo-coaching-white_xafq2t.png" }: NavbarProps) {
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  const [isMobileResourcesOpen, setIsMobileResourcesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
@@ -198,6 +199,94 @@ export default function Navbar({ logoPath = "https://res.cloudinary.com/dcuswyfu
             >
               About
             </Link>
+            
+            {/* Resources - Mobile */}
+            <div className="space-y-1">
+              <button
+                onClick={() => setIsMobileResourcesOpen(!isMobileResourcesOpen)}
+                className="flex items-center justify-between w-full px-1 py-2 hover:text-white transition-colors"
+              >
+                <span>Resources</span>
+                <svg
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    isMobileResourcesOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              {isMobileResourcesOpen && (
+                <div className="pl-4 space-y-1 border-l border-white/10 ml-1">
+                  <Link
+                    href="/"
+                    className="block px-1 py-2 hover:text-white transition-colors"
+                    onClick={() => {
+                      setIsMobileResourcesOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    Coaching
+                  </Link>
+                  <a
+                    href="https://inner-circle.brianmoses.com/how-to-get-3-new-listings-fast-new"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-1 py-2 hover:text-white transition-colors"
+                    onClick={() => {
+                      setIsMobileResourcesOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    Inner Circle
+                  </a>
+                  <a
+                    href="https://calendly.com/coachbrianmoses/30-minute-business-assessment-clone"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-1 py-2 hover:text-white transition-colors"
+                    onClick={() => {
+                      setIsMobileResourcesOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    1 on 1
+                  </a>
+                  <a
+                    href="https://inner-circle.brianmoses.com/never-say-cant"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-1 py-2 hover:text-white transition-colors"
+                    onClick={() => {
+                      setIsMobileResourcesOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    Never Say Can&apos;t
+                  </a>
+                  <a
+                    href="https://www.brianmoses.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-1 py-2 hover:text-white transition-colors"
+                    onClick={() => {
+                      setIsMobileResourcesOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    Brian Moses AI
+                  </a>
+                </div>
+              )}
+            </div>
+
             <Link
               href="/keynote"
               className="block px-1 py-2 hover:text-white"
