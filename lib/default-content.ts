@@ -42,8 +42,9 @@ export const DEFAULT_CONTENT: Record<string, string> = {
   "social.youtube": "https://www.youtube.com/@BMosesNH",
   "contact.email": "Brian@BrianMoses.com",
   "contact.phone": "+16038601104",
-  "meta.title": "Brian Moses | #2 Worldwide Real Estate Coach & Keynote Speaker | Attract, Don't Chase",
-  "meta.description": "Discover the proven Attract, Don't Chase system from Brian Moses — a #2 worldwide ranked real estate agent, top real estate coach, and in‑demand keynote speaker.",
+  "meta.title": "Internationally Recognized Speaker & Sales Performance Expert",
+  "meta.description":
+    "Brian Moses — keynote speaker, real estate coach, and creator of the Attract, Don’t Chase system. Proven strategies for sales performance and scaling your business.",
   "work.heading": "Let Brian Show You How to Stand Out in Your Market, Close More Deals and Enjoy a Balanced Life.",
   "work.program1.title": "Inner Circle Group Coaching",
   "work.program1.desc": "Accelerate Your Results! For the agent producing 0-15 sales annually, income is under $200,000 and they want a system and process that's predictable, reliable and duplicatable to produce more FAST!",

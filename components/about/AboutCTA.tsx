@@ -31,7 +31,7 @@ export default function AboutCTA() {
           </h3>
 
           {/* Paragraph */}
-          <p className="text-[#94A3B8] text-lg md:text-2xl font-normal leading-[1.4] md:leading-7 w-full">
+          <p className="about-body-text text-[#94A3B8] w-full">
             Join the elite agents using the &ldquo;Exact Playbook&rdquo; to scale to 7 and 8-figure commissions without the grind.
           </p>
         </div>
@@ -89,7 +89,7 @@ export default function AboutCTA() {
           </h3>
 
           {/* Paragraph */}
-          <p className="text-[#94A3B8] text-lg md:text-2xl font-normal leading-[1.4] md:leading-7 w-full">
+          <p className="about-body-text text-[#94A3B8] w-full">
             Transform your organization with a keynote that blends raw storytelling with tactical business architecture.
           </p>
         </div>

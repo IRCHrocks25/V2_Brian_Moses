@@ -35,7 +35,7 @@ export default function AboutBeginning({
 
         {/* Quote Overlay */}
         <div className="absolute bottom-10 md:bottom-20 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[566px] bg-black/5 backdrop-blur-sm p-4 md:py-2 md:pl-8 border-l-4 border-[#0070F3]">
-          <p className="text-white text-xl md:text-3xl font-semibold leading-snug md:leading-[38px] tracking-tight">
+          <p className="about-body-text text-white tracking-tight">
             &ldquo;{quote}&rdquo;
           </p>
         </div>
@@ -64,7 +64,7 @@ export default function AboutBeginning({
           {paragraphs.map((p, i) => (
             <p
               key={i}
-              className="text-[#CFCFCF] text-lg md:text-2xl font-normal leading-relaxed md:leading-[33px]"
+              className="about-body-text text-[#CFCFCF]"
             >
               {p}
             </p>

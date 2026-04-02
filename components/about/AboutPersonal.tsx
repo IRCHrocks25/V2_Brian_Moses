@@ -16,7 +16,7 @@ export default function AboutPersonal({
     "Today, Brian lives a life that his 28-year-old self wouldn't recognize, but his core mission remains rooted in that basement apartment: proving to anyone who feels stuck that the \"projects\" are just a starting line, not a destination.",
   ],
   quote = "You are always closer than you think. The only question is whether you'll be there to receive it.",
-  imageSrc = "/Images/HS Biz Planning 014 1 (1).png",
+  imageSrc = "/images/HS Biz Planning 014 1 (1).png",
 }: AboutPersonalProps) {
   return (
     <section className="w-full flex flex-col lg:flex-row justify-center items-center py-16 md:py-24 px-6 lg:px-8 gap-12 lg:gap-20 max-w-[1440px] mx-auto">
@@ -41,11 +41,11 @@ export default function AboutPersonal({
         {/* Paragraphs Container */}
         <div className="flex flex-col gap-6 pt-4 w-full max-w-[595px]">
           {paragraphs.map((p, i) => (
-            <p key={i} className="text-[#94A3B8] text-base md:text-lg font-normal leading-6">
+            <p key={i} className="about-body-text text-[#CFCFCF]">
               {p}
             </p>
           ))}
-          <p className="text-white text-xl md:text-2xl font-bold leading-8 pt-2 md:pt-8">
+          <p className="about-body-text text-white font-semibold pt-2 md:pt-8">
             &ldquo;{quote}&rdquo;
           </p>
         </div>

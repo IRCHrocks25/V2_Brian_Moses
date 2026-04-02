@@ -65,7 +65,7 @@ export default function AboutTimeline({
                     }`}>
                     {item.title}
                   </h3>
-                  <p className={`text-[#CFCFCF] text-lg md:text-2xl font-medium leading-7 ${!isEven ? "md:text-right" : ""
+                  <p className={`about-body-text text-[#CFCFCF] ${!isEven ? "md:text-right" : ""
                     } max-w-[536px]`}>
                     {item.description}
                   </p>

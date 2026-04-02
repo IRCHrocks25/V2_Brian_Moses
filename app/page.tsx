@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -11,6 +12,35 @@ import WorkLessEarnMoreSection from "@/components/WorkLessEarnMoreSection";
 import Footer from "@/components/Footer";
 import DynamicCTA from "@/components/DynamicCTA";
 import { getContent } from "@/lib/get-content";
+import {
+  SITE_LINK_PREVIEW_TITLE,
+  SITE_META_DESCRIPTION,
+} from "@/lib/site-meta";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getContent("home");
+  let linkTitle = content["meta.title"]?.trim() || SITE_LINK_PREVIEW_TITLE;
+  // Replace old default site title from DB/CMS so link previews update without manual edit
+  if (linkTitle.includes("#2 Worldwide Real Estate Coach")) {
+    linkTitle = SITE_LINK_PREVIEW_TITLE;
+  }
+  const description =
+    content["meta.description"]?.trim() || SITE_META_DESCRIPTION;
+  return {
+    title: `${linkTitle} | Brian Moses`,
+    description,
+    openGraph: {
+      title: linkTitle,
+      description,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: linkTitle,
+      description,
+    },
+  };
+}
 
 const homepageColoredLogos = [
   "/Brian_Moses_Main_Page_Logos/Frame 1000007701.png",

@@ -28,6 +28,13 @@ body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+/* About page body copy — one definition so sizes stay consistent */
+@layer components {
+  .about-body-text {
+    @apply text-lg md:text-2xl font-normal leading-relaxed md:leading-[33px];
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

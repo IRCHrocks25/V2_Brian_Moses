@@ -27,11 +27,11 @@ export default function AboutHero({
           alt="Audience Background"
           fill
           priority
-          className="object-cover grayscale"
+          className="object-cover"
         />
       </div>
 
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 z-[1] bg-black/40" aria-hidden />
 
       {/* Content Wrapper */}
       <div className="relative z-10 py-24 md:py-[150px] flex flex-col items-center text-center">
@@ -41,7 +41,7 @@ export default function AboutHero({
         </h1>
 
         {/* Subheadline */}
-        <p className="text-[#CBD5E1] text-lg md:text-[24px] font-medium leading-relaxed md:leading-[32px] max-w-[1000px] mb-16 md:mb-[96px]">
+        <p className="about-body-text text-[#CBD5E1] max-w-[1000px] mb-16 md:mb-[96px]">
           {subheadline}
         </p>
 

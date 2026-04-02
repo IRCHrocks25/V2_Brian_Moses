@@ -45,7 +45,7 @@ export default function AboutTurningPoint({
           {paragraphs.map((p, i) => (
             <p
               key={i}
-              className="text-[#CFCFCF] text-lg md:text-2xl font-normal leading-relaxed md:leading-[33px]"
+              className="about-body-text text-[#CFCFCF]"
             >
               {p}
             </p>
@@ -78,7 +78,7 @@ export default function AboutTurningPoint({
                 />
               </svg>
             </div>
-            <span className="text-black font-semibold text-lg md:text-2xl leading-6 tracking-tight">
+            <span className="about-body-text text-black font-semibold tracking-tight">
               {pillar}
             </span>
           </div>

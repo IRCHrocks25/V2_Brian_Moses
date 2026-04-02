@@ -47,15 +47,28 @@ async function main() {
     { key: "achievements.item1", value: "Named one of the 125 Most Influential People in Real Estate (Success Magazine)", page: "home", section: "Achievements" },
     { key: "achievements.item2", value: "Ranked #2 Worldwide in a major real estate franchise, 7 years in the Top 10", page: "home", section: "Achievements" },
     { key: "achievements.item3", value: "Brian Moses coaches and trains North America's most successful agents. These agents average over $1 Million Dollars in Annual Income and you can too.", page: "home", section: "Achievements" },
-    { key: "meta.title", value: "Brian Moses | #2 Worldwide Real Estate Coach & Keynote Speaker | Attract, Don't Chase", page: "all", section: "Meta" },
-    { key: "meta.description", value: "Discover the proven Attract, Don't Chase system from Brian Moses — a #2 worldwide ranked real estate agent, top real estate coach, and in‑demand keynote speaker.", page: "all", section: "Meta" },
+    {
+      key: "meta.title",
+      value: "Internationally Recognized Speaker & Sales Performance Expert",
+      page: "all",
+      section: "Meta",
+    },
+    {
+      key: "meta.description",
+      value:
+        "Brian Moses — keynote speaker, real estate coach, and creator of the Attract, Don’t Chase system. Proven strategies for sales performance and scaling your business.",
+      page: "all",
+      section: "Meta",
+    },
   ];
 
   for (const d of defaults) {
     await prisma.contentItem.upsert({
       where: { key: d.key },
       create: d,
-      update: {},
+      update: d.key.startsWith("meta.")
+        ? { value: d.value, page: d.page, section: d.section }
+        : {},
     });
   }
   console.log("Seeded", defaults.length, "content items");

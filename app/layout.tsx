@@ -3,6 +3,12 @@ import { Suspense } from "react";
 import "./globals.css";
 import FontLoader from "@/components/FontLoader";
 import PreviewBanner from "@/components/PreviewBanner";
+import {
+  SITE_BROWSER_TITLE,
+  SITE_LINK_PREVIEW_TITLE,
+  SITE_META_DESCRIPTION,
+  getSiteMetadataBase,
+} from "@/lib/site-meta";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -11,10 +17,19 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title:
-    "Brian Moses | #2 Worldwide Real Estate Coach & Keynote Speaker | Attract, Don’t Chase",
-  description:
-    "Discover the proven Attract, Don’t Chase system from Brian Moses — a #2 worldwide ranked real estate agent, top real estate coach, and in‑demand keynote speaker. Learn how to generate consistent, high‑quality listings, scale your production without burnout, and create a predictable seven‑figure real estate business.",
+  metadataBase: getSiteMetadataBase(),
+  title: SITE_BROWSER_TITLE,
+  description: SITE_META_DESCRIPTION,
+  openGraph: {
+    title: SITE_LINK_PREVIEW_TITLE,
+    description: SITE_META_DESCRIPTION,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_LINK_PREVIEW_TITLE,
+    description: SITE_META_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({
@@ -30,7 +45,7 @@ export default function RootLayout({
           <Suspense fallback={null}>
             <PreviewBanner />
           </Suspense>
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 min-w-0">{children}</main>
         </div>
       </body>
     </html>

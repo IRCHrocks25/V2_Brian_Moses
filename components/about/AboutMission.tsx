@@ -46,13 +46,13 @@ export default function AboutMission({
         </h2>
 
         {/* Paragraph */}
-        <p className="text-white text-center text-xl md:text-2xl font-normal leading-relaxed md:leading-[32px] max-w-[986px] mt-4 mb-8">
+        <p className="about-body-text text-white text-center max-w-[986px] mt-4 mb-8">
           {paragraph}
         </p>
 
         {/* Quote Box (Border) */}
         <div className="w-full max-w-[1214px] flex flex-col items-center py-8 border-y border-[rgba(65,71,84,0.2)] mt-2">
-          <p className="text-white text-center text-[22px] md:text-3xl font-normal leading-snug md:leading-[38px] max-w-[735px]">
+          <p className="about-body-text text-white text-center font-medium max-w-[735px]">
             &ldquo;{quote}&rdquo;
           </p>
         </div>
