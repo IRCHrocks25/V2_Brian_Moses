@@ -12,7 +12,7 @@ export default function AboutBeginning({
   tagline = "The Beginning",
   heading = "Abandoned.\nBut not broken.",
   paragraphs = [
-    "Brian Moses didn't start with a silver spoon. He started in a housing project in Canada, abandoned by his father at age three, and raised by a single mother who worked multiple jobs just to keep the lights on. Survival wasn't a concept—it was a daily requirement.",
+    "Raised by a single mother, Brian Moses wasn't handed opportunity. He didn't inherit wealth. In fact, all evidence pointed toward a life of poverty. His biological father walked out on the family at age three, leaving his mom—a German immigrant who couldn't speak much English—to raise the 2 kids. Survival wasn't a concept—it was a daily requirement. Government subsidized housing in the inner city, welfare, food stamps, and her having to work 3 jobs just to keep the lights on.",
     "By his early twenties, the cycle of struggle seemed unbreakable. Brian found himself $40,000 in debt, living in a basement apartment, and battling a deep, quiet depression. He was working three jobs, yet falling further behind every month. The \"system\" he had been told to follow—work hard, keep your head down—was failing him.",
     "It was in this moment of total depletion that Brian made a radical decision. He wasn't just going to \"try harder\"—he was going to change the rules entirely. He realized that the only way out of the project was to build a podium of his own making.",
   ],
