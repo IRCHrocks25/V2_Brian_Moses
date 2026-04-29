@@ -20,7 +20,7 @@ export default function AboutBeginning({
   imageSrc = "/images/Keynote.png",
 }: AboutBeginningProps) {
   return (
-    <section className="w-full flex flex-col lg:flex-row justify-center items-center py-16 md:py-32 px-6 lg:px-8 gap-12 lg:gap-[76px] mt-12 md:mt-24 max-w-[1440px] mx-auto">
+    <section className="w-full flex flex-col lg:flex-row justify-center items-center pt-8 pb-16 md:pt-12 md:pb-32 px-6 lg:px-8 gap-12 lg:gap-[76px] mt-6 md:mt-8 max-w-[1440px] mx-auto">
       {/* Image Column */}
       <div className="relative rounded-[24px] overflow-hidden shadow-2xl w-full lg:w-[621px] h-[500px] md:h-[771px] bg-white flex-shrink-0">
         <Image
