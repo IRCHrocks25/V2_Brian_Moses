@@ -17,6 +17,10 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'cdn.katalyst-crm.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'images.unsplash.com',
       },
     ],
