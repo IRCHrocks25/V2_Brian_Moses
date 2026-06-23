@@ -58,9 +58,9 @@ export default function Navbar({ logoPath = "https://res.cloudinary.com/dcuswyfu
             <Image
               src={logoPath}
               alt="Brian Moses"
-              width={200}
+              width={350}
               height={60}
-              className="h-10 md:h-12 lg:h-14 w-auto object-contain"
+              className="h-6 md:h-8 lg:h-10 w-auto object-contain"
               priority
             />
           </Link>

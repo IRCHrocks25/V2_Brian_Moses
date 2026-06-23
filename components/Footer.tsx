@@ -30,13 +30,13 @@ export default function Footer({
           <div>
             {/* Logo */}
             <div className="mb-6">
-              <div className="relative h-12 md:h-14 lg:h-16 w-auto">
+              <div className="relative h-8 md:h-10 lg:h-12 w-auto">
                 <Image
                   src={logoPath}
                   alt="Brian Moses"
-                  width={200}
+                  width={350}
                   height={60}
-                  className="h-12 md:h-14 lg:h-16 w-auto object-contain object-left"
+                  className="h-8 md:h-10 lg:h-12 w-auto object-contain object-left"
                 />
               </div>
             </div>
