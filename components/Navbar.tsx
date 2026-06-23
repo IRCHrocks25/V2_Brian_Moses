@@ -60,7 +60,7 @@ export default function Navbar({ logoPath = "https://res.cloudinary.com/dcuswyfu
               alt="Brian Moses"
               width={350}
               height={60}
-              className="h-6 md:h-8 lg:h-10 w-auto object-contain"
+              className="h-5 md:h-6 lg:h-7 w-auto object-contain"
               priority
             />
           </Link>
